@@ -7,7 +7,7 @@ class RouteGenerator {
     final args = settings.arguments;
 
     switch (settings.name) {
-      case PageRoutes.login:
+      case PageRoutes.entryScreen:
         return MaterialPageRoute(builder: (_) => EntryScreen());
     }
   }

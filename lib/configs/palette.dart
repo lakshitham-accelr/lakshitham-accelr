@@ -1,9 +1,17 @@
 import 'package:flutter/material.dart';
 
 class Palette {
-  static const primaryColor = Color(0xFFC8394E);
+  // Common Colors
+  static const headerBGColor = Color(0xFFE8EFFF);
+  static const primaryColor = Color(0xFF1761FD);
+  static const darkBlueColor = Color(0xFF1D2C48);
+  static const borderColor = Color(0xFFE3EBF6);
 
-  // Gray colors
+  // User Profile
+  static const userOffline = Color(0xFFF5325C);
+  static const userOnline = Color(0xFF03d87f);
+
+  // Gray Colors
   static const gray_1 = Color(0xFF333333);
   static const gray_2 = Color(0xFF4F4F4F);
   static const gray_3 = Color(0xFF828282);
@@ -11,14 +19,4 @@ class Palette {
   static const gray_5 = Color(0xFFE0E0E0);
   static const gray_6 = Color(0xFFF2F2F2);
   static const gray_7 = Color(0xFFF9F9F9);
-
-  static const success = Color(0xFFCDFFE1);
-  static const failure = Color(0xFFFFCDCD);
-
-  static const highlight = Color(0x1AC8394E);
-  static const highlight_no_opacity = Color(0xFFFAECED);
-
-  static const bottom_popup_bg = Colors.white;
-  static const bottom_popup_text_color = Colors.white;
-
 }
