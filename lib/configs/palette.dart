@@ -6,6 +6,7 @@ class Palette {
   static const primaryColor = Color(0xFF1761FD);
   static const darkBlueColor = Color(0xFF1D2C48);
   static const borderColor = Color(0xFFE3EBF6);
+  static const unselectedItem_bottom_navbar = Color(0xFF68728C);
 
   // User Profile
   static const userOffline = Color(0xFFF5325C);
