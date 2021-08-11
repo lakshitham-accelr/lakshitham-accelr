@@ -1,6 +1,7 @@
 import 'package:eimsky_dns_app/configs/ThemeConstants.dart';
 import 'package:eimsky_dns_app/configs/palette.dart';
 import 'package:eimsky_dns_app/screens/home_page_screen.dart';
+import 'package:eimsky_dns_app/screens/jobs_screen.dart';
 import 'package:flutter/material.dart';
 
 class EntryScreen extends StatefulWidget {
@@ -14,7 +15,7 @@ class _EntryScreenState extends State<EntryScreen> {
   int currentPageIndex = 0;
   List<Widget> pageList = <Widget>[
     HomePageScreen(),
-    Container(),
+    JobsScreen(),
     Container(),
     Container(),
   ];
@@ -46,6 +47,9 @@ class _EntryScreenState extends State<EntryScreen> {
           fontSize: 8.0,
         ),
         backgroundColor: Palette.primaryColor.withOpacity(0.08),
+        selectedItemColor: Palette.primaryColor,
+        showUnselectedLabels: false,
+        showSelectedLabels: false,
         items: [
           BottomNavigationBarItem(
             icon: Container(
@@ -137,7 +141,7 @@ class _EntryScreenState extends State<EntryScreen> {
                     alignment: Alignment.center,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      color: Palette.primaryColor.withOpacity(0.6),
+                      color: Palette.primaryColor,
                     ),
                     child: Text(
                       "12",

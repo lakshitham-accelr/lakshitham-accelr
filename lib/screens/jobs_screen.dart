@@ -1,35 +1,33 @@
-import 'package:eimsky_dns_app/utils/page_routes.dart';
-import 'package:eimsky_dns_app/widgets/entry_page_header_bg_widget.dart';
-import 'package:eimsky_dns_app/widgets/main_menu_card_item.dart';
 import 'package:eimsky_dns_app/widgets/simple_page_section_widget.dart';
+import 'package:eimsky_dns_app/widgets/header_bg_widget.dart';
 import 'package:eimsky_dns_app/widgets/user_avatar_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:eimsky_dns_app/configs/ThemeConstants.dart';
 import 'package:eimsky_dns_app/configs/palette.dart';
 import 'package:fl_chart/fl_chart.dart';
 
-class HomePageScreen extends StatefulWidget {
-  const HomePageScreen({Key? key}) : super(key: key);
+class JobsScreen extends StatefulWidget {
+  const JobsScreen({Key? key}) : super(key: key);
 
   @override
-  _HomePageScreenState createState() => _HomePageScreenState();
+  _JobsScreenState createState() => _JobsScreenState();
 }
 
-class _HomePageScreenState extends State<HomePageScreen> {
+class _JobsScreenState extends State<JobsScreen> {
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         Container(
-          height: 360,
+          height: 185,
           child: Stack(
             children: [
               Stack(
                 clipBehavior: Clip.none,
                 children: [
-                  EntryPageHeaderBGWidget(),
+                  HeaderBGWidget(),
                   Positioned(
-                    top: 40.0,
+                    top: 30.0,
                     left: 0.0,
                     right: 0.0,
                     child: Container(
@@ -38,31 +36,44 @@ class _HomePageScreenState extends State<HomePageScreen> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
+                          Container(
+                            width: 35.0,
+                            height: 35.0,
+                            alignment: Alignment.center,
+                            margin: EdgeInsets.all(15.0),
+                            decoration: BoxDecoration(
+                              color: Palette.primaryColor.withOpacity(0.05),
+                              borderRadius: BorderRadius.all(Radius.circular(ThemeConstants.borderRadius)),
+                            ),
+                            child: Icon(
+                              Icons.arrow_back_ios_sharp,
+                              size: 15.0,
+                              color: Colors.white,
+                            ),
+                          ),
                           Column(
                             mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              Text(
-                                "Robert Pattinson",
-                                style: TextStyle(
-                                  fontFamily: ThemeConstants.font,
-                                  fontWeight: FontWeight.w700,
-                                  color: Palette.darkBlueColor,
-                                  fontSize: 17.0,
-                                ),
-                              ),
-                              Text(
-                                "Colombo 4 - depot",
-                                style: TextStyle(
-                                  fontFamily: ThemeConstants.font,
-                                  fontWeight: FontWeight.w600,
-                                  color: Palette.darkBlueColor.withOpacity(0.4),
-                                  fontSize: 12.0,
+                              Container(
+                                width: 160.0,
+                                child: Text(
+                                  "Jobs",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontFamily: ThemeConstants.font,
+                                    fontWeight: FontWeight.w700,
+                                    color: Palette.darkBlueColor,
+                                    fontSize: 17.0,
+                                  ),
                                 ),
                               ),
                             ],
                           ),
-                          UserAvatarWidget(),
+                          Transform.scale(
+                            scale: 0.7,
+                            child: UserAvatarWidget(),
+                          ),
                         ],
                       ),
                     ),
@@ -72,47 +83,126 @@ class _HomePageScreenState extends State<HomePageScreen> {
               Positioned(
                 bottom: 0.0,
                 child: Container(
-                  height: 235.0,
+                  height: 105.0,
                   width: MediaQuery.of(context).size.width,
                   alignment: Alignment.center,
-                  child: SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    physics: BouncingScrollPhysics(),
-                    child: Container(
-                      margin: EdgeInsets.symmetric(horizontal: 22.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              GestureDetector(
-                                onTap: () {
-                                  Navigator.of(context).pushNamed(PageRoutes.jobsScreen);
-                                },
-                                child: MainMenuCardItem(count: 12, text: "Portable Generator"),
+                  child: Container(
+                    margin: EdgeInsets.symmetric(horizontal: 22.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Container(
+                          width: 130.0,
+                          height: 52.0,
+                          margin: EdgeInsets.symmetric(horizontal: 6.0),
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            border: Border.all(
+                              color: Palette.borderColor.withOpacity(0.5),
+                              width: 2.0,
+                            ),
+                            borderRadius: BorderRadius.all(Radius.circular(ThemeConstants.borderRadius / 2)),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Palette.darkBlueColor.withOpacity(0.1),
+                                spreadRadius: 0,
+                                blurRadius: 30,
+                                offset: Offset(0, 7), // changes position of shadow
                               ),
-                              MainMenuCardItem(count: 08, text: "PIS"),
-                              MainMenuCardItem(count: 09, text: "Refuel"),
-                              MainMenuCardItem(count: 17, text: "Portable Generator"),
-                              MainMenuCardItem(count: 08, text: "PIS"),
                             ],
                           ),
-                          SizedBox(
-                            height: 10.0,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              MainMenuCardItem(text: "Site Access Permission Management"),
-                              MainMenuCardItem(count: 12, text: "Vehicle Management"),
-                              MainMenuCardItem(count: 12, text: "Site Routine Management"),
-                              MainMenuCardItem(text: "Portable Generator"),
-                              MainMenuCardItem(count: 12, text: "Portable Generator"),
+                              Container(
+                                width: 35.0,
+                                height: 35.0,
+                                alignment: Alignment.center,
+                                decoration: BoxDecoration(
+                                  color: Palette.primaryColor.withOpacity(0.1),
+                                  borderRadius: BorderRadius.all(Radius.circular(ThemeConstants.borderRadius / 2)),
+                                ),
+                                child: Icon(
+                                  Icons.flash_on_sharp,
+                                  color: Palette.primaryColor,
+                                  size: 20.0,
+                                ),
+                              ),
+                              Container(
+                                width: 60.0,
+                                margin: EdgeInsets.only(left: 10.0),
+                                child: Text(
+                                  "Ad Hoc",
+                                  maxLines: 3,
+                                  style: TextStyle(
+                                    fontFamily: ThemeConstants.font,
+                                    fontWeight: FontWeight.w600,
+                                    color: Palette.primaryColor,
+                                    fontSize: 10.0,
+                                  ),
+                                ),
+                              ),
                             ],
                           ),
-                        ],
-                      ),
+                        ),
+                        Container(
+                          width: 130.0,
+                          height: 52.0,
+                          margin: EdgeInsets.symmetric(horizontal: 6.0),
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            border: Border.all(
+                              color: Palette.borderColor.withOpacity(0.5),
+                              width: 2.0,
+                            ),
+                            borderRadius: BorderRadius.all(Radius.circular(ThemeConstants.borderRadius / 2)),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Palette.darkBlueColor.withOpacity(0.1),
+                                spreadRadius: 0,
+                                blurRadius: 30,
+                                offset: Offset(0, 7), // changes position of shadow
+                              ),
+                            ],
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Container(
+                                width: 35.0,
+                                height: 35.0,
+                                alignment: Alignment.center,
+                                decoration: BoxDecoration(
+                                  color: Palette.primaryColor.withOpacity(0.1),
+                                  borderRadius: BorderRadius.all(Radius.circular(ThemeConstants.borderRadius / 2)),
+                                ),
+                                child: Icon(
+                                  Icons.schedule_rounded,
+                                  color: Palette.primaryColor,
+                                  size: 20.0,
+                                ),
+                              ),
+                              Container(
+                                width: 60.0,
+                                margin: EdgeInsets.only(left: 10.0),
+                                child: Text(
+                                  "Scheduled",
+                                  maxLines: 3,
+                                  style: TextStyle(
+                                    fontFamily: ThemeConstants.font,
+                                    fontWeight: FontWeight.w600,
+                                    color: Palette.primaryColor,
+                                    fontSize: 10.0,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ),
