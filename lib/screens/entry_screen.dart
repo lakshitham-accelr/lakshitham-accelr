@@ -66,7 +66,7 @@ class _EntryScreenState extends State<EntryScreen> {
                       width: 10.0,
                       height: 10.0,
                       decoration: BoxDecoration(
-                        color: (currentPageIndex == 0) ? Palette.primaryColor : Palette.unselectedItem_bottom_navbar,
+                        color: (currentPageIndex == 0) ? Palette.primaryColor : Palette.unselectedItem,
                         borderRadius: BorderRadius.all(Radius.circular(3)),
                       ),
                     ),
@@ -78,7 +78,7 @@ class _EntryScreenState extends State<EntryScreen> {
                       width: 10.0,
                       height: 10.0,
                       decoration: BoxDecoration(
-                        color: (currentPageIndex == 0) ? Palette.primaryColor.withOpacity(0.3) : Palette.unselectedItem_bottom_navbar.withOpacity(0.3),
+                        color: (currentPageIndex == 0) ? Palette.primaryColor.withOpacity(0.3) : Palette.unselectedItem.withOpacity(0.3),
                         borderRadius: BorderRadius.all(Radius.circular(3)),
                       ),
                     ),
@@ -90,7 +90,7 @@ class _EntryScreenState extends State<EntryScreen> {
                       width: 10.0,
                       height: 10.0,
                       decoration: BoxDecoration(
-                        color: (currentPageIndex == 0) ? Palette.primaryColor : Palette.unselectedItem_bottom_navbar,
+                        color: (currentPageIndex == 0) ? Palette.primaryColor : Palette.unselectedItem,
                         borderRadius: BorderRadius.all(Radius.circular(3)),
                       ),
                     ),
@@ -102,7 +102,7 @@ class _EntryScreenState extends State<EntryScreen> {
                       width: 10.0,
                       height: 10.0,
                       decoration: BoxDecoration(
-                        color: (currentPageIndex == 0) ? Palette.primaryColor : Palette.unselectedItem_bottom_navbar,
+                        color: (currentPageIndex == 0) ? Palette.primaryColor : Palette.unselectedItem,
                         borderRadius: BorderRadius.all(Radius.circular(3)),
                       ),
                     ),

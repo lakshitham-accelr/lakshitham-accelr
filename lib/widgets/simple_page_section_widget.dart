@@ -23,7 +23,7 @@ class SimplePageSectionWidget extends StatelessWidget {
           ),
         ),
         Container(
-          height: 2.0,
+          height: 1.0,
           width: MediaQuery.of(context).size.width * 0.55,
           color: Palette.darkBlueColor.withOpacity(0.1),
         ),
