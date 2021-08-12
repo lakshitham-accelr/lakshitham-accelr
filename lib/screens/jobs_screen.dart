@@ -1,3 +1,4 @@
+import 'package:eimsky_dns_app/widgets/color_dot_widget.dart';
 import 'package:eimsky_dns_app/widgets/simple_page_section_widget.dart';
 import 'package:eimsky_dns_app/widgets/header_bg_widget.dart';
 import 'package:eimsky_dns_app/widgets/user_avatar_widget.dart';
@@ -220,108 +221,103 @@ class _JobsScreenState extends State<JobsScreen> {
               margin: EdgeInsets.symmetric(horizontal: ThemeConstants.defaultBodyMargin),
               child: Column(
                 children: [
-                  SimplePageSectionWidget(sectionName: "Section One"),
-                  SizedBox(
-                    height: 25.0,
-                  ),
                   Container(
-                    height: 70.0,
-                    decoration: BoxDecoration(
-                      color: Palette.primaryColor.withOpacity(0.02),
-                      border: Border.all(
-                        color: Palette.borderColor.withOpacity(0.5),
-                        width: 1.0,
-                      ),
-                      borderRadius: BorderRadius.all(Radius.circular(ThemeConstants.borderRadius)),
-                    ),
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Container(
-                          alignment: Alignment.center,
-                          margin: EdgeInsets.symmetric(horizontal: 15.0),
-                          child: Row(
-                            children: [
-                              Container(
-                                width: 40.0,
-                                height: 40.0,
-                                alignment: Alignment.center,
-                                decoration: BoxDecoration(
-                                  color: Palette.primaryColor.withOpacity(0.1),
-                                  borderRadius: BorderRadius.all(Radius.circular(ThemeConstants.borderRadius)),
+                        Row(
+                          children: [
+                            Container(
+                              decoration: BoxDecoration(
+                                color: Palette.primaryColor.withOpacity(0.02),
+                                border: Border.all(
+                                  color: Palette.borderColor,
+                                  width: 1.0,
                                 ),
-                                child: Text(
-                                  "12",
-                                  style: TextStyle(
-                                    fontFamily: ThemeConstants.font,
-                                    fontWeight: FontWeight.w600,
-                                    color: Palette.primaryColor,
-                                    fontSize: 17.0,
-                                  ),
-                                ),
+                                borderRadius: BorderRadius.all(Radius.circular(ThemeConstants.borderRadius / 1.5)),
                               ),
-                              SizedBox(
-                                width: 10.0,
+                              padding: EdgeInsets.symmetric(
+                                vertical: 5.0,
+                                horizontal: 15.0,
                               ),
-                              Container(
-                                width: 60.0,
-                                child: Text(
-                                  "SLA Time Breaches",
-                                  maxLines: 3,
-                                  style: TextStyle(
-                                    fontFamily: ThemeConstants.font,
-                                    fontWeight: FontWeight.w600,
-                                    color: Palette.darkBlueColor,
-                                    fontSize: 9.0,
-                                  ),
+                              child: Text(
+                                "Today : Aug 5",
+                                style: TextStyle(
+                                  fontFamily: ThemeConstants.font,
+                                  fontWeight: FontWeight.w600,
+                                  color: Palette.primaryColor,
+                                  fontSize: 12.0,
                                 ),
                               ),
-                            ],
-                          ),
+                            ),
+                            SizedBox(
+                              width: 5.0,
+                            ),
+                            Container(
+                              decoration: BoxDecoration(
+                                color: Palette.primaryColor.withOpacity(0.02),
+                                border: Border.all(
+                                  color: Palette.borderColor,
+                                  width: 1.0,
+                                ),
+                                borderRadius: BorderRadius.all(Radius.circular(ThemeConstants.borderRadius / 1.5)),
+                              ),
+                              padding: EdgeInsets.symmetric(
+                                vertical: 5.0,
+                                horizontal: 15.0,
+                              ),
+                              child: Text(
+                                "PG",
+                                style: TextStyle(
+                                  fontFamily: ThemeConstants.font,
+                                  fontWeight: FontWeight.w600,
+                                  color: Palette.primaryColor,
+                                  fontSize: 12.0,
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                         Container(
-                          width: 1.0,
-                          color: Palette.borderColor.withOpacity(0.5),
-                        ),
-                        Container(
-                          alignment: Alignment.center,
-                          margin: EdgeInsets.symmetric(horizontal: 15.0),
-                          child: Row(
+                          width: 25.0,
+                          height: 25.0,
+                          color: Colors.transparent,
+                          padding: EdgeInsets.all(5),
+                          child: Stack(
                             children: [
-                              Container(
-                                width: 40.0,
-                                height: 40.0,
-                                alignment: Alignment.center,
-                                decoration: BoxDecoration(
-                                  color: Palette.primaryColor.withOpacity(0.1),
-                                  borderRadius: BorderRadius.all(Radius.circular(ThemeConstants.borderRadius)),
-                                ),
-                                child: Text(
-                                  "12",
-                                  style: TextStyle(
-                                    fontFamily: ThemeConstants.font,
-                                    fontWeight: FontWeight.w600,
-                                    color: Palette.primaryColor,
-                                    fontSize: 17.0,
-                                  ),
+                              Positioned(
+                                right: 0.0,
+                                top: 0.0,
+                                child: ColorDotWidget(
+                                  dotSize: 6.0,
+                                  dotColor: Palette.dot_color_1,
                                 ),
                               ),
-                              SizedBox(
-                                width: 10.0,
-                              ),
-                              Container(
-                                width: 60.0,
-                                child: Text(
-                                  "Outage Count",
-                                  maxLines: 3,
-                                  style: TextStyle(
-                                    fontFamily: ThemeConstants.font,
-                                    fontWeight: FontWeight.w600,
-                                    color: Palette.darkBlueColor,
-                                    fontSize: 9.0,
-                                  ),
+                              Positioned(
+                                left: 0.0,
+                                top: 0.0,
+                                child: ColorDotWidget(
+                                  dotSize: 6.0,
+                                  dotColor: Palette.dot_color_2,
                                 ),
                               ),
+                              Positioned(
+                                right: 0.0,
+                                bottom: 0.0,
+                                child: ColorDotWidget(
+                                  dotSize: 6.0,
+                                  dotColor: Palette.dot_color_3,
+                                ),
+                              ),
+                              Positioned(
+                                left: 0.0,
+                                bottom: 0.0,
+                                child: ColorDotWidget(
+                                  dotSize: 6.0,
+                                  dotColor: Palette.dot_color_4,
+                                ),
+                              )
                             ],
                           ),
                         ),
@@ -329,127 +325,13 @@ class _JobsScreenState extends State<JobsScreen> {
                     ),
                   ),
                   SizedBox(
-                    height: 45.0,
+                    height: 35.0,
                   ),
-                  SimplePageSectionWidget(sectionName: "Two One"),
-                  SizedBox(
-                    height: 25.0,
+                  Column(
+                    children: [
+                      SimplePageSectionWidget(sectionName: "Today"),
+                    ],
                   ),
-                  Container(
-                    height: 150.0,
-                    alignment: Alignment.center,
-                    child: LineChart(
-                      LineChartData(
-                        minX: 0,
-                        maxX: 11,
-                        minY: 0,
-                        maxY: 7,
-                        lineTouchData: LineTouchData(
-                            enabled: true,
-                            getTouchedSpotIndicator: (barData, indexes) => List<TouchedSpotIndicatorData>.generate(
-                                indexes.length,
-                                (_) => TouchedSpotIndicatorData(
-                                      FlLine(
-                                        color: Palette.userOffline,
-                                        strokeWidth: .75,
-                                      ),
-                                      FlDotData(
-                                        show: true,
-                                      ),
-                                    ))),
-                        titlesData: FlTitlesData(
-                          show: true,
-                          bottomTitles: SideTitles(
-                            showTitles: true,
-                            getTextStyles: (value) {
-                              return TextStyle(
-                                fontFamily: ThemeConstants.font,
-                                fontWeight: FontWeight.w600,
-                                color: Palette.darkBlueColor.withOpacity(0.4),
-                                fontSize: 7.0,
-                              );
-                            },
-                            getTitles: (value) {
-                              switch (value.toInt()) {
-                                case 2:
-                                  return "Feb";
-                                case 4:
-                                  return "Mar";
-                                case 6:
-                                  return "Apr";
-                                case 8:
-                                  return "May";
-                                case 10:
-                                  return "Jun";
-                              }
-                              return "";
-                            },
-                          ),
-                          leftTitles: SideTitles(
-                            showTitles: true,
-                            reservedSize: 10,
-                            getTextStyles: (value) {
-                              return TextStyle(
-                                fontFamily: ThemeConstants.font,
-                                fontWeight: FontWeight.w600,
-                                color: Palette.darkBlueColor.withOpacity(0.4),
-                                fontSize: 7.0,
-                              );
-                            },
-                            getTitles: (value) {
-                              switch (value.toInt()) {
-                                case 2:
-                                  return "100";
-                                case 4:
-                                  return "200";
-                                case 6:
-                                  return "300";
-                                case 8:
-                                  return "400";
-                                case 10:
-                                  return "500";
-                              }
-                              return "";
-                            },
-                          ),
-                        ),
-                        gridData: FlGridData(
-                          show: false,
-                        ),
-                        borderData: FlBorderData(
-                          show: true,
-                          border: Border(
-                            left: BorderSide(width: 1, color: Palette.darkBlueColor.withOpacity(0.1)),
-                            bottom: BorderSide(width: 1, color: Palette.darkBlueColor.withOpacity(0.1)),
-                          ),
-                        ),
-                        lineBarsData: [
-                          LineChartBarData(
-                              colors: [Palette.primaryColor.withOpacity(0.6)],
-                              isCurved: true,
-                              dotData: FlDotData(
-                                show: false,
-                              ),
-                              belowBarData: BarAreaData(
-                                show: true,
-                                colors: [Palette.primaryColor.withOpacity(0.05)],
-                              ),
-                              spots: [
-                                FlSpot(0, 3),
-                                FlSpot(2.6, 2),
-                                FlSpot(4.9, 6),
-                                FlSpot(6.8, 2.5),
-                                FlSpot(8, 4),
-                                FlSpot(9.5, 3),
-                                FlSpot(11, 5),
-                              ]),
-                        ],
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 50.0,
-                  )
                 ],
               ),
             ),
