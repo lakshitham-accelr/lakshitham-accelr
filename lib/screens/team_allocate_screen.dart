@@ -1,5 +1,6 @@
 import 'package:eimsky_dns_app/configs/ThemeConstants.dart';
 import 'package:eimsky_dns_app/configs/palette.dart';
+import 'package:eimsky_dns_app/utils/page_routes.dart';
 import 'package:eimsky_dns_app/widgets/header_bg_widget.dart';
 import 'package:eimsky_dns_app/widgets/simple_page_section_widget.dart';
 import 'package:eimsky_dns_app/widgets/team_card_item.dart';
@@ -19,6 +20,70 @@ class _TeamAllocateScreenState extends State<TeamAllocateScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomSheet: Container(
+        height: 55.0,
+        color: Palette.primaryColor.withOpacity(0.08),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            GestureDetector(
+              onTap: () {
+                print("Edit Team");
+              },
+              child: Container(
+                width: 150.0,
+                height: 30.0,
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  border: Border.all(
+                    color: Palette.primaryColor,
+                    width: 1.0,
+                  ),
+                  borderRadius: BorderRadius.all(Radius.circular(ThemeConstants.borderRadius / 1.5)),
+                ),
+                child: Text(
+                  "Edit Team",
+                  style: TextStyle(
+                    fontFamily: ThemeConstants.font,
+                    fontWeight: FontWeight.w600,
+                    color: Palette.primaryColor,
+                    fontSize: 11.0,
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(width: 10),
+            GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, PageRoutes.siteAccessRequestScreen);
+              },
+              child: Container(
+                width: 150.0,
+                height: 30.0,
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  color: Palette.primaryColor,
+                  border: Border.all(
+                    color: Palette.primaryColor,
+                    width: 1.0,
+                  ),
+                  borderRadius: BorderRadius.all(Radius.circular(ThemeConstants.borderRadius / 1.5)),
+                ),
+                child: Text(
+                  "Allocate Team",
+                  style: TextStyle(
+                    fontFamily: ThemeConstants.font,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.white,
+                    fontSize: 11.0,
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
       body: Column(
         children: [
           Container(
@@ -210,60 +275,6 @@ class _TeamAllocateScreenState extends State<TeamAllocateScreen> {
                               TeamMemberCard(),
                             ],
                           )),
-                    ),
-                  ),
-                  Container(
-                    height: 55.0,
-                    color: Palette.primaryColor.withOpacity(0.08),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(
-                          width: 150.0,
-                          height: 30.0,
-                          alignment: Alignment.center,
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            border: Border.all(
-                              color: Palette.primaryColor,
-                              width: 1.0,
-                            ),
-                            borderRadius: BorderRadius.all(Radius.circular(ThemeConstants.borderRadius / 1.5)),
-                          ),
-                          child: Text(
-                            "Edit Team",
-                            style: TextStyle(
-                              fontFamily: ThemeConstants.font,
-                              fontWeight: FontWeight.w600,
-                              color: Palette.primaryColor,
-                              fontSize: 11.0,
-                            ),
-                          ),
-                        ),
-                        SizedBox(width: 10),
-                        Container(
-                          width: 150.0,
-                          height: 30.0,
-                          alignment: Alignment.center,
-                          decoration: BoxDecoration(
-                            color: Palette.primaryColor,
-                            border: Border.all(
-                              color: Palette.primaryColor,
-                              width: 1.0,
-                            ),
-                            borderRadius: BorderRadius.all(Radius.circular(ThemeConstants.borderRadius / 1.5)),
-                          ),
-                          child: Text(
-                            "Allocate Team",
-                            style: TextStyle(
-                              fontFamily: ThemeConstants.font,
-                              fontWeight: FontWeight.w600,
-                              color: Colors.white,
-                              fontSize: 11.0,
-                            ),
-                          ),
-                        ),
-                      ],
                     ),
                   ),
                 ],
