@@ -3,6 +3,7 @@ import 'package:eimsky_dns_app/configs/palette.dart';
 import 'package:eimsky_dns_app/widgets/header_bg_widget.dart';
 import 'package:eimsky_dns_app/widgets/simple_page_section_widget.dart';
 import 'package:eimsky_dns_app/widgets/team_card_item.dart';
+import 'package:eimsky_dns_app/widgets/team_member_card.dart';
 import 'package:eimsky_dns_app/widgets/user_avatar_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
@@ -35,19 +36,22 @@ class _TeamAllocateScreenState extends State<TeamAllocateScreen> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Container(
-                          width: 35.0,
-                          height: 35.0,
-                          alignment: Alignment.center,
-                          margin: EdgeInsets.all(15.0),
-                          decoration: BoxDecoration(
-                            color: Palette.primaryColor.withOpacity(0.05),
-                            borderRadius: BorderRadius.all(Radius.circular(ThemeConstants.borderRadius)),
-                          ),
-                          child: Icon(
-                            Icons.arrow_back_ios_sharp,
-                            size: 15.0,
-                            color: Colors.white,
+                        GestureDetector(
+                          onTap: () => Navigator.pop(context),
+                          child: Container(
+                            width: 35.0,
+                            height: 35.0,
+                            alignment: Alignment.center,
+                            margin: EdgeInsets.all(15.0),
+                            decoration: BoxDecoration(
+                              color: Palette.primaryColor.withOpacity(0.05),
+                              borderRadius: BorderRadius.all(Radius.circular(ThemeConstants.borderRadius)),
+                            ),
+                            child: Icon(
+                              Icons.arrow_back_ios_sharp,
+                              size: 15.0,
+                              color: Colors.white,
+                            ),
                           ),
                         ),
                         Column(
@@ -57,7 +61,7 @@ class _TeamAllocateScreenState extends State<TeamAllocateScreen> {
                             Container(
                               width: 160.0,
                               child: Text(
-                                "Jobs",
+                                "Allocate Team",
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                   fontFamily: ThemeConstants.font,
@@ -197,392 +201,69 @@ class _TeamAllocateScreenState extends State<TeamAllocateScreen> {
                             spacing: 10.0,
                             alignment: WrapAlignment.spaceBetween,
                             children: [
-                              Container(
-                                width: 145.0,
-                                alignment: Alignment.center,
-                                padding: EdgeInsets.symmetric(vertical: 7.0),
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  border: Border.all(
-                                    color: Palette.borderColor,
-                                    width: 1.0,
-                                  ),
-                                  borderRadius: BorderRadius.all(Radius.circular(ThemeConstants.borderRadius / 1.5)),
-                                ),
-                                child: Row(
-                                  children: [
-                                    Container(
-                                      margin: EdgeInsets.symmetric(horizontal: 10.0),
-                                      decoration: BoxDecoration(
-                                        border: Border.all(
-                                          color: Palette.primaryColor.withOpacity(0.2),
-                                          width: 1.5,
-                                        ),
-                                        shape: BoxShape.circle,
-                                        color: Colors.white,
-                                      ),
-                                      child: CircleAvatar(
-                                        radius: 13,
-                                        foregroundColor: Palette.headerBGColor,
-                                        backgroundImage: AssetImage("assets/mock/sample_prof_pic.jpeg"),
-                                      ),
-                                    ),
-                                    Container(
-                                      width: 85.0,
-                                      child: Text(
-                                        "Andy  Timmons",
-                                        textAlign: TextAlign.start,
-                                        overflow: TextOverflow.ellipsis,
-                                        maxLines: 2,
-                                        style: TextStyle(
-                                          fontFamily: ThemeConstants.font,
-                                          fontWeight: FontWeight.w700,
-                                          color: Palette.teamMemberCardTextColor,
-                                          fontSize: 8.0,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Container(
-                                width: 145.0,
-                                alignment: Alignment.center,
-                                padding: EdgeInsets.symmetric(vertical: 7.0),
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  border: Border.all(
-                                    color: Palette.borderColor,
-                                    width: 1.0,
-                                  ),
-                                  borderRadius: BorderRadius.all(Radius.circular(ThemeConstants.borderRadius / 1.5)),
-                                ),
-                                child: Row(
-                                  children: [
-                                    Container(
-                                      margin: EdgeInsets.symmetric(horizontal: 10.0),
-                                      decoration: BoxDecoration(
-                                        border: Border.all(
-                                          color: Palette.primaryColor.withOpacity(0.2),
-                                          width: 1.5,
-                                        ),
-                                        shape: BoxShape.circle,
-                                        color: Colors.white,
-                                      ),
-                                      child: CircleAvatar(
-                                        radius: 13,
-                                        foregroundColor: Palette.headerBGColor,
-                                        backgroundImage: AssetImage("assets/mock/sample_prof_pic.jpeg"),
-                                      ),
-                                    ),
-                                    Container(
-                                      width: 85.0,
-                                      child: Text(
-                                        "Andy  Timmons",
-                                        textAlign: TextAlign.start,
-                                        overflow: TextOverflow.ellipsis,
-                                        maxLines: 2,
-                                        style: TextStyle(
-                                          fontFamily: ThemeConstants.font,
-                                          fontWeight: FontWeight.w700,
-                                          color: Palette.teamMemberCardTextColor,
-                                          fontSize: 8.0,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Container(
-                                width: 145.0,
-                                alignment: Alignment.center,
-                                padding: EdgeInsets.symmetric(vertical: 7.0),
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  border: Border.all(
-                                    color: Palette.borderColor,
-                                    width: 1.0,
-                                  ),
-                                  borderRadius: BorderRadius.all(Radius.circular(ThemeConstants.borderRadius / 1.5)),
-                                ),
-                                child: Row(
-                                  children: [
-                                    Container(
-                                      margin: EdgeInsets.symmetric(horizontal: 10.0),
-                                      decoration: BoxDecoration(
-                                        border: Border.all(
-                                          color: Palette.primaryColor.withOpacity(0.2),
-                                          width: 1.5,
-                                        ),
-                                        shape: BoxShape.circle,
-                                        color: Colors.white,
-                                      ),
-                                      child: CircleAvatar(
-                                        radius: 13,
-                                        foregroundColor: Palette.headerBGColor,
-                                        backgroundImage: AssetImage("assets/mock/sample_prof_pic.jpeg"),
-                                      ),
-                                    ),
-                                    Container(
-                                      width: 85.0,
-                                      child: Text(
-                                        "Andy  Timmons",
-                                        textAlign: TextAlign.start,
-                                        overflow: TextOverflow.ellipsis,
-                                        maxLines: 2,
-                                        style: TextStyle(
-                                          fontFamily: ThemeConstants.font,
-                                          fontWeight: FontWeight.w700,
-                                          color: Palette.teamMemberCardTextColor,
-                                          fontSize: 8.0,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Container(
-                                width: 145.0,
-                                alignment: Alignment.center,
-                                padding: EdgeInsets.symmetric(vertical: 7.0),
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  border: Border.all(
-                                    color: Palette.borderColor,
-                                    width: 1.0,
-                                  ),
-                                  borderRadius: BorderRadius.all(Radius.circular(ThemeConstants.borderRadius / 1.5)),
-                                ),
-                                child: Row(
-                                  children: [
-                                    Container(
-                                      margin: EdgeInsets.symmetric(horizontal: 10.0),
-                                      decoration: BoxDecoration(
-                                        border: Border.all(
-                                          color: Palette.primaryColor.withOpacity(0.2),
-                                          width: 1.5,
-                                        ),
-                                        shape: BoxShape.circle,
-                                        color: Colors.white,
-                                      ),
-                                      child: CircleAvatar(
-                                        radius: 13,
-                                        foregroundColor: Palette.headerBGColor,
-                                        backgroundImage: AssetImage("assets/mock/sample_prof_pic.jpeg"),
-                                      ),
-                                    ),
-                                    Container(
-                                      width: 85.0,
-                                      child: Text(
-                                        "Andy  Timmons",
-                                        textAlign: TextAlign.start,
-                                        overflow: TextOverflow.ellipsis,
-                                        maxLines: 2,
-                                        style: TextStyle(
-                                          fontFamily: ThemeConstants.font,
-                                          fontWeight: FontWeight.w700,
-                                          color: Palette.teamMemberCardTextColor,
-                                          fontSize: 8.0,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Container(
-                                width: 145.0,
-                                alignment: Alignment.center,
-                                padding: EdgeInsets.symmetric(vertical: 7.0),
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  border: Border.all(
-                                    color: Palette.borderColor,
-                                    width: 1.0,
-                                  ),
-                                  borderRadius: BorderRadius.all(Radius.circular(ThemeConstants.borderRadius / 1.5)),
-                                ),
-                                child: Row(
-                                  children: [
-                                    Container(
-                                      margin: EdgeInsets.symmetric(horizontal: 10.0),
-                                      decoration: BoxDecoration(
-                                        border: Border.all(
-                                          color: Palette.primaryColor.withOpacity(0.2),
-                                          width: 1.5,
-                                        ),
-                                        shape: BoxShape.circle,
-                                        color: Colors.white,
-                                      ),
-                                      child: CircleAvatar(
-                                        radius: 13,
-                                        foregroundColor: Palette.headerBGColor,
-                                        backgroundImage: AssetImage("assets/mock/sample_prof_pic.jpeg"),
-                                      ),
-                                    ),
-                                    Container(
-                                      width: 85.0,
-                                      child: Text(
-                                        "Andy  Timmons",
-                                        textAlign: TextAlign.start,
-                                        overflow: TextOverflow.ellipsis,
-                                        maxLines: 2,
-                                        style: TextStyle(
-                                          fontFamily: ThemeConstants.font,
-                                          fontWeight: FontWeight.w700,
-                                          color: Palette.teamMemberCardTextColor,
-                                          fontSize: 8.0,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Container(
-                                width: 145.0,
-                                alignment: Alignment.center,
-                                padding: EdgeInsets.symmetric(vertical: 7.0),
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  border: Border.all(
-                                    color: Palette.borderColor,
-                                    width: 1.0,
-                                  ),
-                                  borderRadius: BorderRadius.all(Radius.circular(ThemeConstants.borderRadius / 1.5)),
-                                ),
-                                child: Row(
-                                  children: [
-                                    Container(
-                                      margin: EdgeInsets.symmetric(horizontal: 10.0),
-                                      decoration: BoxDecoration(
-                                        border: Border.all(
-                                          color: Palette.primaryColor.withOpacity(0.2),
-                                          width: 1.5,
-                                        ),
-                                        shape: BoxShape.circle,
-                                        color: Colors.white,
-                                      ),
-                                      child: CircleAvatar(
-                                        radius: 13,
-                                        foregroundColor: Palette.headerBGColor,
-                                        backgroundImage: AssetImage("assets/mock/sample_prof_pic.jpeg"),
-                                      ),
-                                    ),
-                                    Container(
-                                      width: 85.0,
-                                      child: Text(
-                                        "Andy  Timmons",
-                                        textAlign: TextAlign.start,
-                                        overflow: TextOverflow.ellipsis,
-                                        maxLines: 2,
-                                        style: TextStyle(
-                                          fontFamily: ThemeConstants.font,
-                                          fontWeight: FontWeight.w700,
-                                          color: Palette.teamMemberCardTextColor,
-                                          fontSize: 8.0,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Container(
-                                width: 145.0,
-                                alignment: Alignment.center,
-                                padding: EdgeInsets.symmetric(vertical: 7.0),
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  border: Border.all(
-                                    color: Palette.borderColor,
-                                    width: 1.0,
-                                  ),
-                                  borderRadius: BorderRadius.all(Radius.circular(ThemeConstants.borderRadius / 1.5)),
-                                ),
-                                child: Row(
-                                  children: [
-                                    Container(
-                                      margin: EdgeInsets.symmetric(horizontal: 10.0),
-                                      decoration: BoxDecoration(
-                                        border: Border.all(
-                                          color: Palette.primaryColor.withOpacity(0.2),
-                                          width: 1.5,
-                                        ),
-                                        shape: BoxShape.circle,
-                                        color: Colors.white,
-                                      ),
-                                      child: CircleAvatar(
-                                        radius: 13,
-                                        foregroundColor: Palette.headerBGColor,
-                                        backgroundImage: AssetImage("assets/mock/sample_prof_pic.jpeg"),
-                                      ),
-                                    ),
-                                    Container(
-                                      width: 85.0,
-                                      child: Text(
-                                        "Andy  Timmons",
-                                        textAlign: TextAlign.start,
-                                        overflow: TextOverflow.ellipsis,
-                                        maxLines: 2,
-                                        style: TextStyle(
-                                          fontFamily: ThemeConstants.font,
-                                          fontWeight: FontWeight.w700,
-                                          color: Palette.teamMemberCardTextColor,
-                                          fontSize: 8.0,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Container(
-                                width: 145.0,
-                                alignment: Alignment.center,
-                                padding: EdgeInsets.symmetric(vertical: 7.0),
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  border: Border.all(
-                                    color: Palette.borderColor,
-                                    width: 1.0,
-                                  ),
-                                  borderRadius: BorderRadius.all(Radius.circular(ThemeConstants.borderRadius / 1.5)),
-                                ),
-                                child: Row(
-                                  children: [
-                                    Container(
-                                      margin: EdgeInsets.symmetric(horizontal: 10.0),
-                                      decoration: BoxDecoration(
-                                        border: Border.all(
-                                          color: Palette.primaryColor.withOpacity(0.2),
-                                          width: 1.5,
-                                        ),
-                                        shape: BoxShape.circle,
-                                        color: Colors.white,
-                                      ),
-                                      child: CircleAvatar(
-                                        radius: 13,
-                                        foregroundColor: Palette.headerBGColor,
-                                        backgroundImage: AssetImage("assets/mock/sample_prof_pic.jpeg"),
-                                      ),
-                                    ),
-                                    Container(
-                                      width: 85.0,
-                                      child: Text(
-                                        "Andy  Timmons",
-                                        textAlign: TextAlign.start,
-                                        overflow: TextOverflow.ellipsis,
-                                        maxLines: 2,
-                                        style: TextStyle(
-                                          fontFamily: ThemeConstants.font,
-                                          fontWeight: FontWeight.w700,
-                                          color: Palette.teamMemberCardTextColor,
-                                          fontSize: 8.0,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
+                              TeamMemberCard(),
+                              TeamMemberCard(),
+                              TeamMemberCard(),
+                              TeamMemberCard(),
+                              TeamMemberCard(),
+                              TeamMemberCard(),
+                              TeamMemberCard(),
                             ],
                           )),
+                    ),
+                  ),
+                  Container(
+                    height: 55.0,
+                    color: Palette.primaryColor.withOpacity(0.08),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                          width: 150.0,
+                          height: 30.0,
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            border: Border.all(
+                              color: Palette.primaryColor,
+                              width: 1.0,
+                            ),
+                            borderRadius: BorderRadius.all(Radius.circular(ThemeConstants.borderRadius / 1.5)),
+                          ),
+                          child: Text(
+                            "Edit Team",
+                            style: TextStyle(
+                              fontFamily: ThemeConstants.font,
+                              fontWeight: FontWeight.w600,
+                              color: Palette.primaryColor,
+                              fontSize: 11.0,
+                            ),
+                          ),
+                        ),
+                        SizedBox(width: 10),
+                        Container(
+                          width: 150.0,
+                          height: 30.0,
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                            color: Palette.primaryColor,
+                            border: Border.all(
+                              color: Palette.primaryColor,
+                              width: 1.0,
+                            ),
+                            borderRadius: BorderRadius.all(Radius.circular(ThemeConstants.borderRadius / 1.5)),
+                          ),
+                          child: Text(
+                            "Allocate Team",
+                            style: TextStyle(
+                              fontFamily: ThemeConstants.font,
+                              fontWeight: FontWeight.w600,
+                              color: Colors.white,
+                              fontSize: 11.0,
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ],

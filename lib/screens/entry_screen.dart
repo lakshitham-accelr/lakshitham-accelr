@@ -21,7 +21,7 @@ class _EntryScreenState extends State<EntryScreen> {
 
     pageList = <Widget>[
       HomePageScreen(focusPageFunction: changePage),
-      JobsScreen(),
+      JobsScreen(focusPageFunction: changePage),
       Container(),
       Container(),
     ];

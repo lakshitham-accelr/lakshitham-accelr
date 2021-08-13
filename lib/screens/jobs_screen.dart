@@ -13,7 +13,9 @@ import 'package:eimsky_dns_app/configs/ThemeConstants.dart';
 import 'package:eimsky_dns_app/configs/palette.dart';
 
 class JobsScreen extends StatefulWidget {
-  const JobsScreen({Key? key}) : super(key: key);
+  const JobsScreen({Key? key, required this.focusPageFunction}) : super(key: key);
+
+  final Function focusPageFunction;
 
   @override
   _JobsScreenState createState() => _JobsScreenState();
@@ -42,19 +44,24 @@ class _JobsScreenState extends State<JobsScreen> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Container(
-                            width: 35.0,
-                            height: 35.0,
-                            alignment: Alignment.center,
-                            margin: EdgeInsets.all(15.0),
-                            decoration: BoxDecoration(
-                              color: Palette.primaryColor.withOpacity(0.05),
-                              borderRadius: BorderRadius.all(Radius.circular(ThemeConstants.borderRadius)),
-                            ),
-                            child: Icon(
-                              Icons.arrow_back_ios_sharp,
-                              size: 15.0,
-                              color: Colors.white,
+                          GestureDetector(
+                            onTap: () {
+                              widget.focusPageFunction(0);
+                            },
+                            child: Container(
+                              width: 35.0,
+                              height: 35.0,
+                              alignment: Alignment.center,
+                              margin: EdgeInsets.all(15.0),
+                              decoration: BoxDecoration(
+                                color: Palette.primaryColor.withOpacity(0.05),
+                                borderRadius: BorderRadius.all(Radius.circular(ThemeConstants.borderRadius)),
+                              ),
+                              child: Icon(
+                                Icons.arrow_back_ios_sharp,
+                                size: 15.0,
+                                color: Colors.white,
+                              ),
                             ),
                           ),
                           Column(

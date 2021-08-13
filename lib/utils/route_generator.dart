@@ -11,8 +11,6 @@ class RouteGenerator {
     switch (settings.name) {
       case PageRoutes.entryScreen:
         return MaterialPageRoute(builder: (_) => EntryScreen());
-      case PageRoutes.jobsScreen:
-        return MaterialPageRoute(builder: (_) => JobsScreen());
       case PageRoutes.teamAllocateScreen:
         return MaterialPageRoute(builder: (_) => TeamAllocateScreen());
     }
