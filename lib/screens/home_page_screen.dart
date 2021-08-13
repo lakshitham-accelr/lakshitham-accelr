@@ -9,7 +9,9 @@ import 'package:eimsky_dns_app/configs/palette.dart';
 import 'package:fl_chart/fl_chart.dart';
 
 class HomePageScreen extends StatefulWidget {
-  const HomePageScreen({Key? key}) : super(key: key);
+  const HomePageScreen({Key? key, required this.focusPageFunction}) : super(key: key);
+
+  final Function focusPageFunction;
 
   @override
   _HomePageScreenState createState() => _HomePageScreenState();
@@ -88,7 +90,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
                             children: [
                               GestureDetector(
                                 onTap: () {
-                                  Navigator.of(context).pushNamed(PageRoutes.jobsScreen);
+                                  widget.focusPageFunction(1);
                                 },
                                 child: MainMenuCardItem(count: 12, text: "Portable Generator"),
                               ),

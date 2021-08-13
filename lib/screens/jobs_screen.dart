@@ -4,6 +4,8 @@ import 'package:eimsky_dns_app/widgets/date_filter_popup.dart';
 import 'package:eimsky_dns_app/widgets/job_card_item.dart';
 import 'package:eimsky_dns_app/widgets/simple_page_section_widget.dart';
 import 'package:eimsky_dns_app/widgets/header_bg_widget.dart';
+import 'package:eimsky_dns_app/widgets/status_filter_popup.dart';
+import 'package:eimsky_dns_app/widgets/type_filter_popup.dart';
 import 'package:eimsky_dns_app/widgets/user_avatar_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:eimsky_dns_app/configs/ThemeConstants.dart';
@@ -256,32 +258,36 @@ class _JobsScreenState extends State<JobsScreen> {
                           SizedBox(
                             width: 5.0,
                           ),
-                          Container(
-                            decoration: BoxDecoration(
-                              color: Palette.primaryColor.withOpacity(0.02),
-                              border: Border.all(
-                                color: Palette.borderColor,
-                                width: 1.0,
+                          GestureDetector(
+                            onTap: () => popUpBox(context, TypeFilterPopUp()),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color: Palette.primaryColor.withOpacity(0.02),
+                                border: Border.all(
+                                  color: Palette.borderColor,
+                                  width: 1.0,
+                                ),
+                                borderRadius: BorderRadius.all(Radius.circular(ThemeConstants.borderRadius / 1.5)),
                               ),
-                              borderRadius: BorderRadius.all(Radius.circular(ThemeConstants.borderRadius / 1.5)),
-                            ),
-                            padding: EdgeInsets.symmetric(
-                              vertical: 5.0,
-                              horizontal: 15.0,
-                            ),
-                            child: Text(
-                              "PG",
-                              style: TextStyle(
-                                fontFamily: ThemeConstants.font,
-                                fontWeight: FontWeight.w600,
-                                color: Palette.primaryColor,
-                                fontSize: 12.0,
+                              padding: EdgeInsets.symmetric(
+                                vertical: 5.0,
+                                horizontal: 15.0,
+                              ),
+                              child: Text(
+                                "PG",
+                                style: TextStyle(
+                                  fontFamily: ThemeConstants.font,
+                                  fontWeight: FontWeight.w600,
+                                  color: Palette.primaryColor,
+                                  fontSize: 12.0,
+                                ),
                               ),
                             ),
                           ),
                         ],
                       ),
                       GestureDetector(
+                        onTap: () => popUpBox(context, StatusFilterPopUp()),
                         child: Container(
                           width: 25.0,
                           height: 25.0,

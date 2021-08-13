@@ -8,17 +8,24 @@ class EntryScreen extends StatefulWidget {
   const EntryScreen({Key? key}) : super(key: key);
 
   @override
-  _EntryScreenState createState() => _EntryScreenState();
+  EntryScreenState createState() => EntryScreenState();
 }
 
-class _EntryScreenState extends State<EntryScreen> {
+class EntryScreenState extends State<EntryScreen> {
   int currentPageIndex = 0;
-  List<Widget> pageList = <Widget>[
-    HomePageScreen(),
-    JobsScreen(),
-    Container(),
-    Container(),
-  ];
+  List<Widget> pageList = [];
+
+  @override
+  void initState() {
+    super.initState();
+
+    pageList = <Widget>[
+      HomePageScreen(focusPageFunction: changePage),
+      JobsScreen(),
+      Container(),
+      Container(),
+    ];
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -172,5 +179,11 @@ class _EntryScreenState extends State<EntryScreen> {
         ],
       ),
     );
+  }
+
+  changePage(int newPageIndex) {
+    setState(() {
+      currentPageIndex = newPageIndex;
+    });
   }
 }

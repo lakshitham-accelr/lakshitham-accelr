@@ -3,18 +3,18 @@ import 'package:eimsky_dns_app/configs/palette.dart';
 import 'package:eimsky_dns_app/configs/ThemeConstants.dart';
 
 
-class DateFilterPopUp extends StatefulWidget {
-  const DateFilterPopUp({Key? key}) : super(key: key);
+class TypeFilterPopUp extends StatefulWidget {
+  const TypeFilterPopUp({Key? key}) : super(key: key);
 
   @override
-  _DateFilterPopUpState createState() => _DateFilterPopUpState();
+  _TypeFilterPopUpState createState() => _TypeFilterPopUpState();
 }
 
-class _DateFilterPopUpState extends State<DateFilterPopUp> {
+class _TypeFilterPopUpState extends State<TypeFilterPopUp> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 440.0,
+      height: 305.0,
       margin: EdgeInsets.only(top: 30.0),
       child: Column(
         children: [
@@ -34,7 +34,7 @@ class _DateFilterPopUpState extends State<DateFilterPopUp> {
                   borderRadius: BorderRadius.all(Radius.circular(ThemeConstants.borderRadius / 1.5)),
                 ),
                 child: Text(
-                  "Today",
+                  "Portable Generator",
                   textAlign: TextAlign.start,
                   style: TextStyle(
                     fontFamily: ThemeConstants.font,
@@ -58,7 +58,7 @@ class _DateFilterPopUpState extends State<DateFilterPopUp> {
                   borderRadius: BorderRadius.all(Radius.circular(ThemeConstants.borderRadius / 1.5)),
                 ),
                 child: Text(
-                  "Yesterday",
+                  "PIS",
                   textAlign: TextAlign.start,
                   style: TextStyle(
                     fontFamily: ThemeConstants.font,
@@ -82,7 +82,7 @@ class _DateFilterPopUpState extends State<DateFilterPopUp> {
                   borderRadius: BorderRadius.all(Radius.circular(ThemeConstants.borderRadius / 1.5)),
                 ),
                 child: Text(
-                  "Last 7 Days",
+                  "Refuel",
                   textAlign: TextAlign.start,
                   style: TextStyle(
                     fontFamily: ThemeConstants.font,
@@ -106,79 +106,7 @@ class _DateFilterPopUpState extends State<DateFilterPopUp> {
                   borderRadius: BorderRadius.all(Radius.circular(ThemeConstants.borderRadius / 1.5)),
                 ),
                 child: Text(
-                  "Last 30 Days",
-                  textAlign: TextAlign.start,
-                  style: TextStyle(
-                    fontFamily: ThemeConstants.font,
-                    fontWeight: FontWeight.w700,
-                    color: Palette.unselectedItem,
-                    fontSize: 12.0,
-                  ),
-                ),
-              ),
-              Container(
-                width: 230.0,
-                alignment: Alignment.center,
-                padding: EdgeInsets.symmetric(vertical: 10.0),
-                margin: EdgeInsets.symmetric(vertical: 5.0),
-                decoration: BoxDecoration(
-                  color: Colors.transparent,
-                  border: Border.all(
-                    color: Colors.transparent,
-                    width: 1.0,
-                  ),
-                  borderRadius: BorderRadius.all(Radius.circular(ThemeConstants.borderRadius / 1.5)),
-                ),
-                child: Text(
-                  "This Month",
-                  textAlign: TextAlign.start,
-                  style: TextStyle(
-                    fontFamily: ThemeConstants.font,
-                    fontWeight: FontWeight.w700,
-                    color: Palette.unselectedItem,
-                    fontSize: 12.0,
-                  ),
-                ),
-              ),
-              Container(
-                width: 230.0,
-                alignment: Alignment.center,
-                padding: EdgeInsets.symmetric(vertical: 10.0),
-                margin: EdgeInsets.symmetric(vertical: 5.0),
-                decoration: BoxDecoration(
-                  color: Colors.transparent,
-                  border: Border.all(
-                    color: Colors.transparent,
-                    width: 1.0,
-                  ),
-                  borderRadius: BorderRadius.all(Radius.circular(ThemeConstants.borderRadius / 1.5)),
-                ),
-                child: Text(
-                  "Last Month",
-                  textAlign: TextAlign.start,
-                  style: TextStyle(
-                    fontFamily: ThemeConstants.font,
-                    fontWeight: FontWeight.w700,
-                    color: Palette.unselectedItem,
-                    fontSize: 12.0,
-                  ),
-                ),
-              ),
-              Container(
-                width: 230.0,
-                alignment: Alignment.center,
-                padding: EdgeInsets.symmetric(vertical: 10.0),
-                margin: EdgeInsets.symmetric(vertical: 5.0),
-                decoration: BoxDecoration(
-                  color: Colors.transparent,
-                  border: Border.all(
-                    color: Colors.transparent,
-                    width: 1.0,
-                  ),
-                  borderRadius: BorderRadius.all(Radius.circular(ThemeConstants.borderRadius / 1.5)),
-                ),
-                child: Text(
-                  "Others",
+                  "Vehicle Management",
                   textAlign: TextAlign.start,
                   style: TextStyle(
                     fontFamily: ThemeConstants.font,
