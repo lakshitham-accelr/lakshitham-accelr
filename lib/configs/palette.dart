@@ -39,4 +39,10 @@ class Palette {
   // Popup Buttons
   static const button_primary = Color(0xFFDBE6FF);
   static const button_secondary = Color(0xFFE5E5E5);
+
+  // Team Cart
+  static const teamCardBGColor = Color(0xFFDBE6FF);
+
+  // Team Member
+  static const teamMemberCardTextColor = Color(0xFF303E67);
 }
