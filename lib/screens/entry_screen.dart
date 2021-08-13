@@ -8,10 +8,10 @@ class EntryScreen extends StatefulWidget {
   const EntryScreen({Key? key}) : super(key: key);
 
   @override
-  EntryScreenState createState() => EntryScreenState();
+  _EntryScreenState createState() => _EntryScreenState();
 }
 
-class EntryScreenState extends State<EntryScreen> {
+class _EntryScreenState extends State<EntryScreen> {
   int currentPageIndex = 0;
   List<Widget> pageList = [];
 
@@ -143,8 +143,8 @@ class EntryScreenState extends State<EntryScreen> {
                   right: 0.0,
                   top: 5.0,
                   child: Container(
-                    height: 13,
-                    width: 13,
+                    height: 15,
+                    width: 15,
                     alignment: Alignment.center,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,

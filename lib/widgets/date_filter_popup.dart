@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:eimsky_dns_app/configs/palette.dart';
 import 'package:eimsky_dns_app/configs/ThemeConstants.dart';
 
-
 class DateFilterPopUp extends StatefulWidget {
   const DateFilterPopUp({Key? key}) : super(key: key);
 
@@ -200,46 +199,51 @@ class _DateFilterPopUpState extends State<DateFilterPopUp> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Container(
-                width: 100.0,
-                alignment: Alignment.center,
-                padding: EdgeInsets.symmetric(vertical: 10.0),
-                margin: EdgeInsets.symmetric(vertical: 20.0),
-                decoration: BoxDecoration(
-                  color: Palette.button_primary,
-                  borderRadius: BorderRadius.all(Radius.circular(ThemeConstants.borderRadius / 1.5)),
-                ),
-                child: Text(
-                  "Done",
-                  textAlign: TextAlign.start,
-                  style: TextStyle(
-                    fontFamily: ThemeConstants.font,
-                    fontWeight: FontWeight.w700,
-                    color: Palette.primaryColor,
-                    fontSize: 12.0,
+              GestureDetector(
+                child: Container(
+                  width: 100.0,
+                  alignment: Alignment.center,
+                  padding: EdgeInsets.symmetric(vertical: 10.0),
+                  margin: EdgeInsets.symmetric(vertical: 20.0),
+                  decoration: BoxDecoration(
+                    color: Palette.button_primary,
+                    borderRadius: BorderRadius.all(Radius.circular(ThemeConstants.borderRadius / 1.5)),
+                  ),
+                  child: Text(
+                    "Done",
+                    textAlign: TextAlign.start,
+                    style: TextStyle(
+                      fontFamily: ThemeConstants.font,
+                      fontWeight: FontWeight.w700,
+                      color: Palette.primaryColor,
+                      fontSize: 12.0,
+                    ),
                   ),
                 ),
               ),
               SizedBox(
                 width: 10,
               ),
-              Container(
-                width: 100.0,
-                alignment: Alignment.center,
-                padding: EdgeInsets.symmetric(vertical: 10.0),
-                margin: EdgeInsets.symmetric(vertical: 20.0),
-                decoration: BoxDecoration(
-                  color: Palette.button_secondary,
-                  borderRadius: BorderRadius.all(Radius.circular(ThemeConstants.borderRadius / 1.5)),
-                ),
-                child: Text(
-                  "Cancel",
-                  textAlign: TextAlign.start,
-                  style: TextStyle(
-                    fontFamily: ThemeConstants.font,
-                    fontWeight: FontWeight.w700,
-                    color: Palette.jobCardDateTextColor,
-                    fontSize: 12.0,
+              GestureDetector(
+                onTap: () => Navigator.pop(context),
+                child: Container(
+                  width: 100.0,
+                  alignment: Alignment.center,
+                  padding: EdgeInsets.symmetric(vertical: 10.0),
+                  margin: EdgeInsets.symmetric(vertical: 20.0),
+                  decoration: BoxDecoration(
+                    color: Palette.button_secondary,
+                    borderRadius: BorderRadius.all(Radius.circular(ThemeConstants.borderRadius / 1.5)),
+                  ),
+                  child: Text(
+                    "Cancel",
+                    textAlign: TextAlign.start,
+                    style: TextStyle(
+                      fontFamily: ThemeConstants.font,
+                      fontWeight: FontWeight.w700,
+                      color: Palette.jobCardDateTextColor,
+                      fontSize: 12.0,
+                    ),
                   ),
                 ),
               ),

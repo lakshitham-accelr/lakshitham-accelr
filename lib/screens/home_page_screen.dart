@@ -1,4 +1,3 @@
-import 'package:eimsky_dns_app/utils/page_routes.dart';
 import 'package:eimsky_dns_app/widgets/entry_page_header_bg_widget.dart';
 import 'package:eimsky_dns_app/widgets/main_menu_card_item.dart';
 import 'package:eimsky_dns_app/widgets/simple_page_section_widget.dart';

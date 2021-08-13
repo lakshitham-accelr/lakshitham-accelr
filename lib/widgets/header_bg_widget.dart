@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:eimsky_dns_app/configs/palette.dart';
 
 class HeaderBGWidget extends StatelessWidget {
-  const HeaderBGWidget({Key? key}) : super(key: key);
+  const HeaderBGWidget({Key? key, this.bannerHeight = 140.0}) : super(key: key);
+
+  final double bannerHeight;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 140.0,
+      height: bannerHeight,
       decoration: BoxDecoration(
           color: Palette.headerBGColor,
           image: DecorationImage(

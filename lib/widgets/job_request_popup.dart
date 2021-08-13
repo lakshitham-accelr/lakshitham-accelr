@@ -1,26 +1,46 @@
+import 'package:eimsky_dns_app/utils/page_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:eimsky_dns_app/configs/palette.dart';
 import 'package:eimsky_dns_app/configs/ThemeConstants.dart';
 
-class TypeFilterPopUp extends StatefulWidget {
-  const TypeFilterPopUp({Key? key}) : super(key: key);
+class JobRequestPopUp extends StatefulWidget {
+  const JobRequestPopUp({Key? key}) : super(key: key);
 
   @override
-  _TypeFilterPopUpState createState() => _TypeFilterPopUpState();
+  _JobRequestPopUpState createState() => _JobRequestPopUpState();
 }
 
-class _TypeFilterPopUpState extends State<TypeFilterPopUp> {
+class _JobRequestPopUpState extends State<JobRequestPopUp> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 305.0,
-      margin: EdgeInsets.only(top: 30.0),
+      height: 235.0,
+      margin: EdgeInsets.only(top: 15.0),
       child: Column(
         children: [
           Column(
             children: [
               Container(
                 width: 250.0,
+                alignment: Alignment.centerLeft,
+                padding: EdgeInsets.symmetric(vertical: 10.0),
+                margin: EdgeInsets.symmetric(vertical: 10.0),
+                child: Text(
+                  "Approve request ?",
+                  textAlign: TextAlign.start,
+                  style: TextStyle(
+                    fontFamily: ThemeConstants.font,
+                    fontWeight: FontWeight.w700,
+                    color: Palette.darkBlueColor,
+                    fontSize: 15.0,
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 10.0,
+              ),
+              Container(
+                width: 150.0,
                 alignment: Alignment.center,
                 padding: EdgeInsets.symmetric(vertical: 10.0),
                 margin: EdgeInsets.symmetric(vertical: 5.0),
@@ -33,85 +53,13 @@ class _TypeFilterPopUpState extends State<TypeFilterPopUp> {
                   borderRadius: BorderRadius.all(Radius.circular(ThemeConstants.borderRadius / 1.5)),
                 ),
                 child: Text(
-                  "Portable Generator",
+                  "PG - 23",
                   textAlign: TextAlign.start,
                   style: TextStyle(
                     fontFamily: ThemeConstants.font,
                     fontWeight: FontWeight.w700,
                     color: Palette.primaryColor,
-                    fontSize: 12.0,
-                  ),
-                ),
-              ),
-              Container(
-                width: 230.0,
-                alignment: Alignment.center,
-                padding: EdgeInsets.symmetric(vertical: 10.0),
-                margin: EdgeInsets.symmetric(vertical: 5.0),
-                decoration: BoxDecoration(
-                  color: Colors.transparent,
-                  border: Border.all(
-                    color: Colors.transparent,
-                    width: 1.0,
-                  ),
-                  borderRadius: BorderRadius.all(Radius.circular(ThemeConstants.borderRadius / 1.5)),
-                ),
-                child: Text(
-                  "PIS",
-                  textAlign: TextAlign.start,
-                  style: TextStyle(
-                    fontFamily: ThemeConstants.font,
-                    fontWeight: FontWeight.w700,
-                    color: Palette.unselectedItem,
-                    fontSize: 12.0,
-                  ),
-                ),
-              ),
-              Container(
-                width: 230.0,
-                alignment: Alignment.center,
-                padding: EdgeInsets.symmetric(vertical: 10.0),
-                margin: EdgeInsets.symmetric(vertical: 5.0),
-                decoration: BoxDecoration(
-                  color: Colors.transparent,
-                  border: Border.all(
-                    color: Colors.transparent,
-                    width: 1.0,
-                  ),
-                  borderRadius: BorderRadius.all(Radius.circular(ThemeConstants.borderRadius / 1.5)),
-                ),
-                child: Text(
-                  "Refuel",
-                  textAlign: TextAlign.start,
-                  style: TextStyle(
-                    fontFamily: ThemeConstants.font,
-                    fontWeight: FontWeight.w700,
-                    color: Palette.unselectedItem,
-                    fontSize: 12.0,
-                  ),
-                ),
-              ),
-              Container(
-                width: 230.0,
-                alignment: Alignment.center,
-                padding: EdgeInsets.symmetric(vertical: 10.0),
-                margin: EdgeInsets.symmetric(vertical: 5.0),
-                decoration: BoxDecoration(
-                  color: Colors.transparent,
-                  border: Border.all(
-                    color: Colors.transparent,
-                    width: 1.0,
-                  ),
-                  borderRadius: BorderRadius.all(Radius.circular(ThemeConstants.borderRadius / 1.5)),
-                ),
-                child: Text(
-                  "Vehicle Management",
-                  textAlign: TextAlign.start,
-                  style: TextStyle(
-                    fontFamily: ThemeConstants.font,
-                    fontWeight: FontWeight.w700,
-                    color: Palette.unselectedItem,
-                    fontSize: 12.0,
+                    fontSize: 17.0,
                   ),
                 ),
               ),
@@ -128,6 +76,9 @@ class _TypeFilterPopUpState extends State<TypeFilterPopUp> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               GestureDetector(
+                onTap: () {
+                  Navigator.of(context).pushReplacementNamed(PageRoutes.teamAllocateScreen);
+                },
                 child: Container(
                   width: 100.0,
                   alignment: Alignment.center,
@@ -138,7 +89,7 @@ class _TypeFilterPopUpState extends State<TypeFilterPopUp> {
                     borderRadius: BorderRadius.all(Radius.circular(ThemeConstants.borderRadius / 1.5)),
                   ),
                   child: Text(
-                    "Done",
+                    "Approve",
                     textAlign: TextAlign.start,
                     style: TextStyle(
                       fontFamily: ThemeConstants.font,

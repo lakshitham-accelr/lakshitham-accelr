@@ -2,6 +2,7 @@ import 'package:eimsky_dns_app/utils/popup_box.dart';
 import 'package:eimsky_dns_app/widgets/color_dot_widget.dart';
 import 'package:eimsky_dns_app/widgets/date_filter_popup.dart';
 import 'package:eimsky_dns_app/widgets/job_card_item.dart';
+import 'package:eimsky_dns_app/widgets/job_request_popup.dart';
 import 'package:eimsky_dns_app/widgets/simple_page_section_widget.dart';
 import 'package:eimsky_dns_app/widgets/header_bg_widget.dart';
 import 'package:eimsky_dns_app/widgets/status_filter_popup.dart';
@@ -364,13 +365,16 @@ class _JobsScreenState extends State<JobsScreen> {
                                   Row(
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
-                                      JobCardItem(
-                                        code: "PG",
-                                        count: 23,
-                                        status: "Approval Pending",
-                                        statusTextColor: Palette.approvalPendingText_red,
-                                        statusBoxColor: Palette.approvalPending_red,
-                                        date: "24 / 06 / 2021",
+                                      GestureDetector(
+                                        onTap: () => popUpBox(context, JobRequestPopUp()),
+                                        child: JobCardItem(
+                                          code: "PG",
+                                          count: 23,
+                                          status: "Approval Pending",
+                                          statusTextColor: Palette.approvalPendingText_red,
+                                          statusBoxColor: Palette.approvalPending_red,
+                                          date: "24 / 06 / 2021",
+                                        ),
                                       ),
                                       JobCardItem(
                                         code: "PG",
