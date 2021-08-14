@@ -26,14 +26,16 @@ class JobsScreen extends StatefulWidget {
 class _JobsScreenState extends State<JobsScreen> {
   int selectedTab = 0;
 
-  // Filters
+  // Date Filter
   int selectedOptionOfDateFilter = 0;
   late List<String> selectedOptionOfDateFilterOptions;
 
+  // Type Filter
   int selectedOptionOfTypeFilter = 0;
   late List<String> selectedOptionOfTypeFilterOptions;
 
-  List<int> selectedOptionOfStatusFilter = [];
+  // Status Filter
+  List<bool> selectedOptionOfStatusFilter = [false, false, false, false];
 
   @override
   void initState() {
@@ -235,7 +237,12 @@ class _JobsScreenState extends State<JobsScreen> {
                               ],
                             ),
                             GestureDetector(
-                              onTap: () => popUpBox(context, StatusFilterPopUp()),
+                              onTap: () => popUpBox(
+                                  context,
+                                  StatusFilterPopUp(
+                                    selectStatusFilterOption: selectedOptionOfStatusFilter,
+                                    selectStatusFilterOptionFunction: selectStatusFilterOption,
+                                  )),
                               child: Container(
                                 width: 25.0,
                                 height: 25.0,
@@ -512,6 +519,12 @@ class _JobsScreenState extends State<JobsScreen> {
   void selectTypeFilterOption(int optionIndex) {
     setState(() {
       selectedOptionOfTypeFilter = optionIndex;
+    });
+  }
+
+  void selectStatusFilterOption(List<bool> optionIndexList) {
+    setState(() {
+      selectedOptionOfStatusFilter = optionIndexList;
     });
   }
 }
