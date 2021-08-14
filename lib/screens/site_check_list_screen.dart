@@ -63,7 +63,7 @@ class _SiteCheckListScreenState extends State<SiteCheckListScreen> {
                             Container(
                               width: 160.0,
                               child: Text(
-                                "Site Access",
+                                "Installation Process",
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                   fontFamily: ThemeConstants.font,
@@ -174,8 +174,6 @@ class _SiteCheckListScreenState extends State<SiteCheckListScreen> {
     return Container(
       height: 65.0,
       color: Palette.primaryColor.withOpacity(0.08),
-      padding: EdgeInsets.symmetric(horizontal: 20),
-      margin: EdgeInsets.only(bottom: 20.0),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

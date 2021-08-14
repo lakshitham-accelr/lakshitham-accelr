@@ -1,5 +1,6 @@
 import 'package:eimsky_dns_app/configs/ThemeConstants.dart';
 import 'package:eimsky_dns_app/configs/palette.dart';
+import 'package:eimsky_dns_app/models/team.dart';
 import 'package:eimsky_dns_app/utils/page_routes.dart';
 import 'package:eimsky_dns_app/widgets/header_bg_widget.dart';
 import 'package:eimsky_dns_app/widgets/simple_page_section_widget.dart';
@@ -17,13 +18,42 @@ class TeamAllocateScreen extends StatefulWidget {
 }
 
 class _TeamAllocateScreenState extends State<TeamAllocateScreen> {
+  // Sample team members
+  TeamMember member_1 = TeamMember(profilePicture: "assets/mock/sample_prof_pic.jpeg", firstName: "Jesse", lastName: "Ross", phoneNumber: "+9471-0001001");
+  TeamMember member_2 = TeamMember(profilePicture: "assets/mock/sample_prof_pic.jpeg", firstName: "Daniel", lastName: "Madsen", phoneNumber: "+9471-0001001");
+  TeamMember member_3 = TeamMember(profilePicture: "assets/mock/sample_prof_pic.jpeg", firstName: "Mary", lastName: "Schneider", phoneNumber: "+9471-0001001");
+  TeamMember member_4 = TeamMember(profilePicture: "assets/mock/sample_prof_pic.jpeg", firstName: "Daniel", lastName: "Madsen", phoneNumber: "+9471-0001001");
+  TeamMember member_5 = TeamMember(profilePicture: "assets/mock/sample_prof_pic.jpeg", firstName: "Mary", lastName: "Schneider", phoneNumber: "+9471-0001001");
+  TeamMember member_6 = TeamMember(profilePicture: "assets/mock/sample_prof_pic.jpeg", firstName: "Jesse", lastName: "Ross", phoneNumber: "+9471-0001001");
+
+  // Sample teams
+  late Team team_1;
+  late Team team_2;
+  late Team team_3;
+  late Team team_4;
+  late Team team_5;
+  late Team team_6;
+
+  Team? selectedTeam;
+
+  @override
+  void initState() {
+    super.initState();
+
+    team_1 = new Team(teamCode: "T - 01", teamName: "Team One", teamMembers: [member_1, member_2, member_3, member_4, member_5, member_6]);
+    team_2 = new Team(teamCode: "T - 02", teamName: "Team Two", teamMembers: [member_2, member_2, member_3]);
+    team_3 = new Team(teamCode: "T - 03", teamName: "Team Three", teamMembers: [member_1, member_3, member_3, member_4, member_5, member_6]);
+    team_4 = new Team(teamCode: "T - 04", teamName: "Team Four", teamMembers: [member_1, member_2, member_3, member_4, member_5, member_6]);
+    team_5 = new Team(teamCode: "T - 05", teamName: "Team Five", teamMembers: [member_3, member_2, member_3, member_4, member_5, member_6]);
+    team_6 = new Team(teamCode: "T - 06", teamName: "Team Six", teamMembers: [member_4, member_2, member_3, member_4, member_5, member_6]);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       bottomSheet: Container(
         height: 65.0,
         color: Palette.primaryColor.withOpacity(0.08),
-        margin: EdgeInsets.only(bottom: 20.0),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -219,31 +249,25 @@ class _TeamAllocateScreenState extends State<TeamAllocateScreen> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
-                              GestureDetector(
-                                child: TeamCardItem(
-                                  teamCode: "T - 01",
-                                  teamName: "Team One",
-                                  isSelected: true,
-                                ),
-                              ),
-                              GestureDetector(
-                                child: TeamCardItem(
-                                  teamCode: "T - 01",
-                                  teamName: "Team One",
-                                ),
-                              ),
-                              GestureDetector(
-                                child: TeamCardItem(
-                                  teamCode: "T - 01",
-                                  teamName: "Team One",
-                                ),
-                              ),
-                              GestureDetector(
-                                child: TeamCardItem(
-                                  teamCode: "T - 01",
-                                  teamName: "Team One",
-                                ),
-                              ),
+                              // Teams list
+                              ...[team_1, team_2, team_3, team_4, team_5, team_6].map((team) {
+                                return GestureDetector(
+                                  onTap: () {
+                                    setState(() {
+                                      if (selectedTeam != null && (selectedTeam!.teamCode == team.teamCode)) {
+                                        selectedTeam = null;
+                                      } else {
+                                        selectedTeam = team;
+                                      }
+                                    });
+                                  },
+                                  child: TeamCardItem(
+                                    teamCode: team.teamCode,
+                                    teamName: team.teamName,
+                                    isSelected: (selectedTeam != null) ? (selectedTeam!.teamCode == team.teamCode) : false,
+                                  ),
+                                );
+                              }),
                             ],
                           ),
                         ],
@@ -254,28 +278,28 @@ class _TeamAllocateScreenState extends State<TeamAllocateScreen> {
                     child: SingleChildScrollView(
                       scrollDirection: Axis.vertical,
                       physics: BouncingScrollPhysics(),
-                      child: Container(
-                          color: Colors.white,
-                          padding: EdgeInsets.only(
-                            left: ThemeConstants.defaultBodyMargin,
-                            right: ThemeConstants.defaultBodyMargin,
-                            bottom: 35.0,
-                            top: 10.0,
-                          ),
-                          child: Wrap(
-                            runSpacing: 10.0,
-                            spacing: 10.0,
-                            alignment: WrapAlignment.spaceBetween,
-                            children: [
-                              TeamMemberCard(),
-                              TeamMemberCard(),
-                              TeamMemberCard(),
-                              TeamMemberCard(),
-                              TeamMemberCard(),
-                              TeamMemberCard(),
-                              TeamMemberCard(),
-                            ],
-                          )),
+                      child: (selectedTeam != null)
+                          ? Container(
+                              color: Colors.white,
+                              padding: EdgeInsets.only(
+                                left: ThemeConstants.defaultBodyMargin,
+                                right: ThemeConstants.defaultBodyMargin,
+                                bottom: 35.0,
+                                top: 10.0,
+                              ),
+                              child: Wrap(
+                                runSpacing: 10.0,
+                                spacing: 10.0,
+                                alignment: WrapAlignment.spaceBetween,
+                                children: [
+                                  ...selectedTeam!.teamMembers.map((teamMember) => TeamMemberCard(
+                                        firstName: teamMember.firstName,
+                                        lastName: teamMember.lastName,
+                                        profilePicUrl: teamMember.profilePicture,
+                                      )),
+                                ],
+                              ))
+                          : SizedBox.shrink(),
                     ),
                   ),
                 ],

@@ -3,7 +3,11 @@ import 'package:eimsky_dns_app/configs/ThemeConstants.dart';
 import 'package:eimsky_dns_app/configs/palette.dart';
 
 class TeamMemberCard extends StatelessWidget {
-  const TeamMemberCard({Key? key}) : super(key: key);
+  const TeamMemberCard({Key? key, required this.firstName, required this.lastName, required this.profilePicUrl}) : super(key: key);
+
+  final String firstName;
+  final String lastName;
+  final String profilePicUrl;
 
   @override
   Widget build(BuildContext context) {
@@ -34,13 +38,14 @@ class TeamMemberCard extends StatelessWidget {
             child: CircleAvatar(
               radius: 13,
               foregroundColor: Palette.headerBGColor,
-              backgroundImage: AssetImage("assets/mock/sample_prof_pic.jpeg"),
+              backgroundImage: AssetImage(profilePicUrl),
+              backgroundColor: Palette.teamCardBGColor,
             ),
           ),
           Container(
             width: 85.0,
             child: Text(
-              "Andy  Timmons",
+              "$firstName  $lastName",
               textAlign: TextAlign.start,
               overflow: TextOverflow.ellipsis,
               maxLines: 2,
