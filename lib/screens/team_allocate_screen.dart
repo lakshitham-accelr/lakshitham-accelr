@@ -23,6 +23,7 @@ class _TeamAllocateScreenState extends State<TeamAllocateScreen> {
       bottomSheet: Container(
         height: 65.0,
         color: Palette.primaryColor.withOpacity(0.08),
+        margin: EdgeInsets.only(bottom: 20.0),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

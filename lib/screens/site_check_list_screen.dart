@@ -172,9 +172,10 @@ class _SiteCheckListScreenState extends State<SiteCheckListScreen> {
 
   Widget _bottomSheet() {
     return Container(
-      height: 55.0,
+      height: 65.0,
       color: Palette.primaryColor.withOpacity(0.08),
       padding: EdgeInsets.symmetric(horizontal: 20),
+      margin: EdgeInsets.only(bottom: 20.0),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -186,11 +187,11 @@ class _SiteCheckListScreenState extends State<SiteCheckListScreen> {
                       elevation: 0,
                       innerColor: Palette.primaryColor,
                       outerColor: Palette.button_primary,
-                      sliderButtonIcon: Icon(Icons.chevron_right, color: Colors.white, size: 40.0),
+                      sliderButtonIcon: Icon(Icons.chevron_right, color: Colors.white, size: 45.0),
                       sliderButtonIconPadding: 0,
                       borderRadius: ThemeConstants.borderRadius / 1.5,
                       sliderRotate: false,
-                      height: 55.0,
+                      height: 65.0,
                       text: "Arrived",
                       textStyle: TextStyle(
                         fontFamily: ThemeConstants.font,
@@ -198,14 +199,15 @@ class _SiteCheckListScreenState extends State<SiteCheckListScreen> {
                         color: Palette.primaryColor,
                         fontSize: 22.0,
                       ),
-                      animationDuration: Duration(microseconds: 30),
-                      sliderButtonYOffset: 5,
+                      sliderButtonYOffset: 7,
                       alignment: Alignment.center,
                       onSubmit: () {
                         print("Arrived");
 
-                        setState(() {
-                          isArrived = true;
+                        Future.delayed(Duration(seconds: 1), () {
+                          setState(() {
+                            isArrived = true;
+                          });
                         });
                       },
                     ),
@@ -224,7 +226,7 @@ class _SiteCheckListScreenState extends State<SiteCheckListScreen> {
                       sliderButtonIconPadding: 0,
                       borderRadius: ThemeConstants.borderRadius / 1.5,
                       sliderRotate: false,
-                      height: 55.0,
+                      height: 65.0,
                       text: "Installed",
                       textStyle: TextStyle(
                         fontFamily: ThemeConstants.font,
@@ -232,8 +234,7 @@ class _SiteCheckListScreenState extends State<SiteCheckListScreen> {
                         color: Palette.primaryColor,
                         fontSize: 22.0,
                       ),
-                      animationDuration: Duration(microseconds: 30),
-                      sliderButtonYOffset: 5,
+                      sliderButtonYOffset: 7,
                       alignment: Alignment.center,
                       onSubmit: () {
                         print("Installed");

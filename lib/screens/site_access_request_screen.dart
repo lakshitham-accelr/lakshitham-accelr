@@ -361,6 +361,7 @@ class _SiteAccessRequestScreenState extends State<SiteAccessRequestScreen> {
     return Container(
       height: 65.0,
       color: Palette.primaryColor.withOpacity(0.08),
+      margin: EdgeInsets.only(bottom: 20.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -426,6 +427,7 @@ class _SiteAccessRequestScreenState extends State<SiteAccessRequestScreen> {
       height: 65.0,
       color: Palette.primaryColor.withOpacity(0.08),
       padding: EdgeInsets.symmetric(horizontal: 20),
+      margin: EdgeInsets.only(bottom: 20.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
