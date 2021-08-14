@@ -187,7 +187,7 @@ class _SiteCheckListScreenState extends State<SiteCheckListScreen> {
                       outerColor: Palette.button_primary,
                       sliderButtonIcon: Icon(Icons.chevron_right, color: Colors.white, size: 45.0),
                       sliderButtonIconPadding: 0,
-                      borderRadius: ThemeConstants.borderRadius / 1.5,
+                      borderRadius: ThemeConstants.borderRadius / 1.0,
                       sliderRotate: false,
                       height: 65.0,
                       text: "Arrived",
@@ -199,6 +199,7 @@ class _SiteCheckListScreenState extends State<SiteCheckListScreen> {
                       ),
                       sliderButtonYOffset: 7,
                       alignment: Alignment.center,
+                      submittedIcon: Icon(Icons.done, color: Palette.primaryColor, size: 40.0),
                       onSubmit: () {
                         print("Arrived");
 
@@ -220,9 +221,9 @@ class _SiteCheckListScreenState extends State<SiteCheckListScreen> {
                       elevation: 0,
                       innerColor: Palette.primaryColor,
                       outerColor: Palette.button_primary,
-                      sliderButtonIcon: Icon(Icons.chevron_right, color: Colors.white, size: 40.0),
+                      sliderButtonIcon: Icon(Icons.chevron_right, color: Colors.white, size: 45.0),
                       sliderButtonIconPadding: 0,
-                      borderRadius: ThemeConstants.borderRadius / 1.5,
+                      borderRadius: ThemeConstants.borderRadius / 1.0,
                       sliderRotate: false,
                       height: 65.0,
                       text: "Installed",
@@ -234,6 +235,7 @@ class _SiteCheckListScreenState extends State<SiteCheckListScreen> {
                       ),
                       sliderButtonYOffset: 7,
                       alignment: Alignment.center,
+                      submittedIcon: Icon(Icons.done, color: Palette.primaryColor, size: 40.0),
                       onSubmit: () {
                         print("Installed");
                       },
