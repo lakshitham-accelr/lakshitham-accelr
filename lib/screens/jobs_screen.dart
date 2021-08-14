@@ -31,6 +31,8 @@ class _JobsScreenState extends State<JobsScreen> {
   late List<String> selectedOptionOfDateFilterOptions;
 
   int selectedOptionOfTypeFilter = 0;
+  late List<String> selectedOptionOfTypeFilterOptions;
+
   List<int> selectedOptionOfStatusFilter = [];
 
   @override
@@ -38,6 +40,7 @@ class _JobsScreenState extends State<JobsScreen> {
     super.initState();
 
     selectedOptionOfDateFilterOptions = ["All", "Today :  ${getMonthAndDate()}", "Yesterday", "Last 7 Days", "Last 30 Days", "This Month", "Last Month", "Others"];
+    selectedOptionOfTypeFilterOptions = ["All", "Portable Generator", "PIS", "Refuel"];
   }
 
   @override
@@ -189,7 +192,7 @@ class _JobsScreenState extends State<JobsScreen> {
                                         fontFamily: ThemeConstants.font,
                                         fontWeight: FontWeight.w600,
                                         color: Palette.primaryColor,
-                                        fontSize: 12.0,
+                                        fontSize: 10.0,
                                       ),
                                     ),
                                   ),
@@ -198,7 +201,13 @@ class _JobsScreenState extends State<JobsScreen> {
                                   width: 5.0,
                                 ),
                                 GestureDetector(
-                                  onTap: () => popUpBox(context, TypeFilterPopUp()),
+                                  onTap: () => popUpBox(
+                                      context,
+                                      TypeFilterPopUp(
+                                        selectTypeFilterOptionList: selectedOptionOfTypeFilterOptions,
+                                        selectTypeFilterOption: selectedOptionOfTypeFilter,
+                                        selectTypeFilterOptionFunction: selectTypeFilterOption,
+                                      )),
                                   child: Container(
                                     decoration: BoxDecoration(
                                       color: Palette.primaryColor.withOpacity(0.02),
@@ -213,12 +222,12 @@ class _JobsScreenState extends State<JobsScreen> {
                                       horizontal: 15.0,
                                     ),
                                     child: Text(
-                                      "PG",
+                                      selectedOptionOfTypeFilterOptions[selectedOptionOfTypeFilter],
                                       style: TextStyle(
                                         fontFamily: ThemeConstants.font,
                                         fontWeight: FontWeight.w600,
                                         color: Palette.primaryColor,
-                                        fontSize: 12.0,
+                                        fontSize: 10.0,
                                       ),
                                     ),
                                   ),

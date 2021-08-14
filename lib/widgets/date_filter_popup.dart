@@ -129,7 +129,7 @@ class _DateFilterPopUpState extends State<DateFilterPopUp> {
           style: TextStyle(
             fontFamily: ThemeConstants.font,
             fontWeight: FontWeight.w700,
-            color: Palette.unselectedItem,
+            color: (tempSelectedOption == index) ? Palette.primaryColor : Palette.unselectedItem,
             fontSize: 12.0,
           ),
         ),
