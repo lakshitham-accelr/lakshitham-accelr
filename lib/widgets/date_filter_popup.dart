@@ -1,193 +1,38 @@
-import 'package:flutter/material.dart';
-import 'package:eimsky_dns_app/configs/palette.dart';
 import 'package:eimsky_dns_app/configs/ThemeConstants.dart';
+import 'package:eimsky_dns_app/configs/palette.dart';
+import 'package:flutter/material.dart';
 
 class DateFilterPopUp extends StatefulWidget {
-  const DateFilterPopUp({Key? key}) : super(key: key);
+  const DateFilterPopUp({Key? key, required this.selectDateFilterOptionList, this.selectDateFilterOption = 0, required this.selectDateFilterOptionFunction}) : super(key: key);
+
+  final List<String> selectDateFilterOptionList;
+  final int selectDateFilterOption;
+  final Function selectDateFilterOptionFunction;
 
   @override
   _DateFilterPopUpState createState() => _DateFilterPopUpState();
 }
 
 class _DateFilterPopUpState extends State<DateFilterPopUp> {
+  int tempSelectedOption = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    tempSelectedOption = widget.selectDateFilterOption;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 440.0,
+      height: 495.0,
       margin: EdgeInsets.only(top: 30.0),
       child: Column(
         children: [
           Column(
-            children: [
-              Container(
-                width: 250.0,
-                alignment: Alignment.center,
-                padding: EdgeInsets.symmetric(vertical: 10.0),
-                margin: EdgeInsets.symmetric(vertical: 5.0),
-                decoration: BoxDecoration(
-                  color: Palette.primaryColor.withOpacity(0.02),
-                  border: Border.all(
-                    color: Palette.borderColor,
-                    width: 1.0,
-                  ),
-                  borderRadius: BorderRadius.all(Radius.circular(ThemeConstants.borderRadius / 1.5)),
-                ),
-                child: Text(
-                  "Today",
-                  textAlign: TextAlign.start,
-                  style: TextStyle(
-                    fontFamily: ThemeConstants.font,
-                    fontWeight: FontWeight.w700,
-                    color: Palette.primaryColor,
-                    fontSize: 12.0,
-                  ),
-                ),
-              ),
-              Container(
-                width: 230.0,
-                alignment: Alignment.center,
-                padding: EdgeInsets.symmetric(vertical: 10.0),
-                margin: EdgeInsets.symmetric(vertical: 5.0),
-                decoration: BoxDecoration(
-                  color: Colors.transparent,
-                  border: Border.all(
-                    color: Colors.transparent,
-                    width: 1.0,
-                  ),
-                  borderRadius: BorderRadius.all(Radius.circular(ThemeConstants.borderRadius / 1.5)),
-                ),
-                child: Text(
-                  "Yesterday",
-                  textAlign: TextAlign.start,
-                  style: TextStyle(
-                    fontFamily: ThemeConstants.font,
-                    fontWeight: FontWeight.w700,
-                    color: Palette.unselectedItem,
-                    fontSize: 12.0,
-                  ),
-                ),
-              ),
-              Container(
-                width: 230.0,
-                alignment: Alignment.center,
-                padding: EdgeInsets.symmetric(vertical: 10.0),
-                margin: EdgeInsets.symmetric(vertical: 5.0),
-                decoration: BoxDecoration(
-                  color: Colors.transparent,
-                  border: Border.all(
-                    color: Colors.transparent,
-                    width: 1.0,
-                  ),
-                  borderRadius: BorderRadius.all(Radius.circular(ThemeConstants.borderRadius / 1.5)),
-                ),
-                child: Text(
-                  "Last 7 Days",
-                  textAlign: TextAlign.start,
-                  style: TextStyle(
-                    fontFamily: ThemeConstants.font,
-                    fontWeight: FontWeight.w700,
-                    color: Palette.unselectedItem,
-                    fontSize: 12.0,
-                  ),
-                ),
-              ),
-              Container(
-                width: 230.0,
-                alignment: Alignment.center,
-                padding: EdgeInsets.symmetric(vertical: 10.0),
-                margin: EdgeInsets.symmetric(vertical: 5.0),
-                decoration: BoxDecoration(
-                  color: Colors.transparent,
-                  border: Border.all(
-                    color: Colors.transparent,
-                    width: 1.0,
-                  ),
-                  borderRadius: BorderRadius.all(Radius.circular(ThemeConstants.borderRadius / 1.5)),
-                ),
-                child: Text(
-                  "Last 30 Days",
-                  textAlign: TextAlign.start,
-                  style: TextStyle(
-                    fontFamily: ThemeConstants.font,
-                    fontWeight: FontWeight.w700,
-                    color: Palette.unselectedItem,
-                    fontSize: 12.0,
-                  ),
-                ),
-              ),
-              Container(
-                width: 230.0,
-                alignment: Alignment.center,
-                padding: EdgeInsets.symmetric(vertical: 10.0),
-                margin: EdgeInsets.symmetric(vertical: 5.0),
-                decoration: BoxDecoration(
-                  color: Colors.transparent,
-                  border: Border.all(
-                    color: Colors.transparent,
-                    width: 1.0,
-                  ),
-                  borderRadius: BorderRadius.all(Radius.circular(ThemeConstants.borderRadius / 1.5)),
-                ),
-                child: Text(
-                  "This Month",
-                  textAlign: TextAlign.start,
-                  style: TextStyle(
-                    fontFamily: ThemeConstants.font,
-                    fontWeight: FontWeight.w700,
-                    color: Palette.unselectedItem,
-                    fontSize: 12.0,
-                  ),
-                ),
-              ),
-              Container(
-                width: 230.0,
-                alignment: Alignment.center,
-                padding: EdgeInsets.symmetric(vertical: 10.0),
-                margin: EdgeInsets.symmetric(vertical: 5.0),
-                decoration: BoxDecoration(
-                  color: Colors.transparent,
-                  border: Border.all(
-                    color: Colors.transparent,
-                    width: 1.0,
-                  ),
-                  borderRadius: BorderRadius.all(Radius.circular(ThemeConstants.borderRadius / 1.5)),
-                ),
-                child: Text(
-                  "Last Month",
-                  textAlign: TextAlign.start,
-                  style: TextStyle(
-                    fontFamily: ThemeConstants.font,
-                    fontWeight: FontWeight.w700,
-                    color: Palette.unselectedItem,
-                    fontSize: 12.0,
-                  ),
-                ),
-              ),
-              Container(
-                width: 230.0,
-                alignment: Alignment.center,
-                padding: EdgeInsets.symmetric(vertical: 10.0),
-                margin: EdgeInsets.symmetric(vertical: 5.0),
-                decoration: BoxDecoration(
-                  color: Colors.transparent,
-                  border: Border.all(
-                    color: Colors.transparent,
-                    width: 1.0,
-                  ),
-                  borderRadius: BorderRadius.all(Radius.circular(ThemeConstants.borderRadius / 1.5)),
-                ),
-                child: Text(
-                  "Others",
-                  textAlign: TextAlign.start,
-                  style: TextStyle(
-                    fontFamily: ThemeConstants.font,
-                    fontWeight: FontWeight.w700,
-                    color: Palette.unselectedItem,
-                    fontSize: 12.0,
-                  ),
-                ),
-              ),
-            ],
+            children: List.generate(widget.selectDateFilterOptionList.length, (index) {
+              return getOptionItem(index);
+            }),
           ),
           SizedBox(height: 30),
           Container(
@@ -200,6 +45,10 @@ class _DateFilterPopUpState extends State<DateFilterPopUp> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               GestureDetector(
+                onTap: () {
+                  widget.selectDateFilterOptionFunction(tempSelectedOption);
+                  Navigator.pop(context);
+                },
                 child: Container(
                   width: 100.0,
                   alignment: Alignment.center,
@@ -250,6 +99,40 @@ class _DateFilterPopUpState extends State<DateFilterPopUp> {
             ],
           ),
         ],
+      ),
+    );
+  }
+
+  Widget getOptionItem(int index) {
+    return GestureDetector(
+      onTap: () {
+        setState(() {
+          tempSelectedOption = index;
+        });
+      },
+      child: Container(
+        width: 230.0,
+        alignment: Alignment.center,
+        padding: EdgeInsets.symmetric(vertical: 10.0),
+        margin: EdgeInsets.symmetric(vertical: 5.0),
+        decoration: BoxDecoration(
+          color: (tempSelectedOption == index) ? Palette.primaryColor.withOpacity(0.05) : Colors.transparent,
+          border: Border.all(
+            color: (tempSelectedOption == index) ? Palette.borderColor : Colors.transparent,
+            width: 1.0,
+          ),
+          borderRadius: BorderRadius.all(Radius.circular(ThemeConstants.borderRadius / 1.5)),
+        ),
+        child: Text(
+          widget.selectDateFilterOptionList[index],
+          textAlign: TextAlign.start,
+          style: TextStyle(
+            fontFamily: ThemeConstants.font,
+            fontWeight: FontWeight.w700,
+            color: Palette.unselectedItem,
+            fontSize: 12.0,
+          ),
+        ),
       ),
     );
   }

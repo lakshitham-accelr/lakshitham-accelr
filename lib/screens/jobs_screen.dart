@@ -1,3 +1,4 @@
+import 'package:eimsky_dns_app/utils/date_utils.dart';
 import 'package:eimsky_dns_app/utils/popup_box.dart';
 import 'package:eimsky_dns_app/widgets/color_dot_widget.dart';
 import 'package:eimsky_dns_app/widgets/date_filter_popup.dart';
@@ -24,6 +25,20 @@ class JobsScreen extends StatefulWidget {
 
 class _JobsScreenState extends State<JobsScreen> {
   int selectedTab = 0;
+
+  // Filters
+  int selectedOptionOfDateFilter = 0;
+  late List<String> selectedOptionOfDateFilterOptions;
+
+  int selectedOptionOfTypeFilter = 0;
+  List<int> selectedOptionOfStatusFilter = [];
+
+  @override
+  void initState() {
+    super.initState();
+
+    selectedOptionOfDateFilterOptions = ["All", "Today :  ${getMonthAndDate()}", "Yesterday", "Last 7 Days", "Last 30 Days", "This Month", "Last Month", "Others"];
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -148,7 +163,13 @@ class _JobsScreenState extends State<JobsScreen> {
                             Row(
                               children: [
                                 GestureDetector(
-                                  onTap: () => popUpBox(context, DateFilterPopUp()),
+                                  onTap: () => popUpBox(
+                                      context,
+                                      DateFilterPopUp(
+                                        selectDateFilterOptionList: selectedOptionOfDateFilterOptions,
+                                        selectDateFilterOption: selectedOptionOfDateFilter,
+                                        selectDateFilterOptionFunction: selectDateFilterOption,
+                                      )),
                                   child: Container(
                                     decoration: BoxDecoration(
                                       color: Palette.primaryColor.withOpacity(0.02),
@@ -163,7 +184,7 @@ class _JobsScreenState extends State<JobsScreen> {
                                       horizontal: 15.0,
                                     ),
                                     child: Text(
-                                      "Today : Aug 5",
+                                      selectedOptionOfDateFilterOptions[selectedOptionOfDateFilter],
                                       style: TextStyle(
                                         fontFamily: ThemeConstants.font,
                                         fontWeight: FontWeight.w600,
@@ -457,7 +478,7 @@ class _JobsScreenState extends State<JobsScreen> {
             ? Expanded(
                 child: Center(
                   child: Text(
-                    "No Sceduled Items",
+                    "No Scheduled Items",
                     maxLines: 3,
                     style: TextStyle(
                       fontFamily: ThemeConstants.font,
@@ -471,5 +492,17 @@ class _JobsScreenState extends State<JobsScreen> {
             : SizedBox.shrink(),
       ],
     );
+  }
+
+  void selectDateFilterOption(int optionIndex) {
+    setState(() {
+      selectedOptionOfDateFilter = optionIndex;
+    });
+  }
+
+  void selectTypeFilterOption(int optionIndex) {
+    setState(() {
+      selectedOptionOfTypeFilter = optionIndex;
+    });
   }
 }
