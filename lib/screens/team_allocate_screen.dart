@@ -21,7 +21,7 @@ class _TeamAllocateScreenState extends State<TeamAllocateScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomSheet: Container(
-        height: 55.0,
+        height: 65.0,
         color: Palette.primaryColor.withOpacity(0.08),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -32,7 +32,7 @@ class _TeamAllocateScreenState extends State<TeamAllocateScreen> {
               },
               child: Container(
                 width: 150.0,
-                height: 30.0,
+                height: 35.0,
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
                   color: Colors.white,
@@ -60,7 +60,7 @@ class _TeamAllocateScreenState extends State<TeamAllocateScreen> {
               },
               child: Container(
                 width: 150.0,
-                height: 30.0,
+                height: 35.0,
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
                   color: Palette.primaryColor,

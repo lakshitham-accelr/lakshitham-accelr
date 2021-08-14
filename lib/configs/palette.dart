@@ -45,4 +45,7 @@ class Palette {
 
   // Team Member
   static const teamMemberCardTextColor = Color(0xFF303E67);
+
+  // Site Access Card
+  static const siteAccessCardBG = Color(0xFFFBFCFF);
 }
