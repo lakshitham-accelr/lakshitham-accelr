@@ -1,6 +1,8 @@
 import 'package:eimsky_dns_app/configs/ThemeConstants.dart';
 import 'package:eimsky_dns_app/configs/palette.dart';
 import 'package:eimsky_dns_app/utils/page_routes.dart';
+import 'package:eimsky_dns_app/utils/popup_box.dart';
+import 'package:eimsky_dns_app/widgets/cancel_request_popup.dart';
 import 'package:eimsky_dns_app/widgets/header_bg_widget.dart';
 import 'package:eimsky_dns_app/widgets/selected_team_card_item.dart';
 import 'package:eimsky_dns_app/widgets/user_avatar_widget.dart';
@@ -364,25 +366,30 @@ class _SiteAccessRequestScreenState extends State<SiteAccessRequestScreen> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Container(
-            width: 150.0,
-            height: 35.0,
-            alignment: Alignment.center,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              border: Border.all(
-                color: Palette.primaryColor,
-                width: 1.0,
+          GestureDetector(
+            onTap: () {
+              popUpBox(context, CancelRequestPopUp());
+            },
+            child: Container(
+              width: 150.0,
+              height: 35.0,
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                border: Border.all(
+                  color: Palette.primaryColor,
+                  width: 1.0,
+                ),
+                borderRadius: BorderRadius.all(Radius.circular(ThemeConstants.borderRadius / 1.5)),
               ),
-              borderRadius: BorderRadius.all(Radius.circular(ThemeConstants.borderRadius / 1.5)),
-            ),
-            child: Text(
-              "Cancel",
-              style: TextStyle(
-                fontFamily: ThemeConstants.font,
-                fontWeight: FontWeight.w600,
-                color: Palette.primaryColor,
-                fontSize: 11.0,
+              child: Text(
+                "Cancel",
+                style: TextStyle(
+                  fontFamily: ThemeConstants.font,
+                  fontWeight: FontWeight.w600,
+                  color: Palette.primaryColor,
+                  fontSize: 11.0,
+                ),
               ),
             ),
           ),
@@ -429,25 +436,30 @@ class _SiteAccessRequestScreenState extends State<SiteAccessRequestScreen> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Container(
-            width: 150.0,
-            height: 35.0,
-            alignment: Alignment.center,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              border: Border.all(
-                color: Palette.primaryColor,
-                width: 1.0,
+          GestureDetector(
+            onTap: () {
+              popUpBox(context, CancelRequestPopUp());
+            },
+            child: Container(
+              width: 150.0,
+              height: 35.0,
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                border: Border.all(
+                  color: Palette.primaryColor,
+                  width: 1.0,
+                ),
+                borderRadius: BorderRadius.all(Radius.circular(ThemeConstants.borderRadius / 1.5)),
               ),
-              borderRadius: BorderRadius.all(Radius.circular(ThemeConstants.borderRadius / 1.5)),
-            ),
-            child: Text(
-              "Cancel",
-              style: TextStyle(
-                fontFamily: ThemeConstants.font,
-                fontWeight: FontWeight.w600,
-                color: Palette.primaryColor,
-                fontSize: 11.0,
+              child: Text(
+                "Cancel",
+                style: TextStyle(
+                  fontFamily: ThemeConstants.font,
+                  fontWeight: FontWeight.w600,
+                  color: Palette.primaryColor,
+                  fontSize: 11.0,
+                ),
               ),
             ),
           ),
