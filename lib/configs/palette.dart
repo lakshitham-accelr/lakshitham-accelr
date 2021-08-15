@@ -48,4 +48,8 @@ class Palette {
 
   // Site Access Card
   static const siteAccessCardBG = Color(0xFFFBFCFF);
+
+  // Expansion Widget Color
+  static const expansionTileBGColor = Color(0xFFDEE8FF);
+  static const expansionContentBGColor = Color(0xFFEFF4FF);
 }

@@ -1,5 +1,6 @@
 import 'package:eimsky_dns_app/configs/ThemeConstants.dart';
 import 'package:eimsky_dns_app/configs/palette.dart';
+import 'package:eimsky_dns_app/widgets/expansion_tile_widget.dart';
 import 'package:eimsky_dns_app/widgets/header_bg_widget.dart';
 import 'package:eimsky_dns_app/widgets/selected_team_card_item.dart';
 import 'package:eimsky_dns_app/widgets/user_avatar_widget.dart';
@@ -152,12 +153,11 @@ class _SiteCheckListScreenState extends State<SiteCheckListScreen> {
                     child: SingleChildScrollView(
                       scrollDirection: Axis.vertical,
                       physics: BouncingScrollPhysics(),
-                      child: Container(
-                        height: 500,
-                        child: Column(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [],
-                        ),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          ExpansionTileWidget(title: "Pre - Inspection List"),
+                        ],
                       ),
                     ),
                   ),
