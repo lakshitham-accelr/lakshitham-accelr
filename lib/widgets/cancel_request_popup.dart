@@ -189,7 +189,9 @@ class _CancelRequestPopUpState extends State<CancelRequestPopUp> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
                     child: Container(
                       width: 100.0,
                       alignment: Alignment.center,
