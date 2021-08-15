@@ -73,10 +73,9 @@ class _CancelRequestPopUpState extends State<CancelRequestPopUp> {
                     height: 15.0,
                   ),
                   Container(
-                    width: 250.0,
                     alignment: Alignment.centerLeft,
                     padding: EdgeInsets.symmetric(vertical: 10.0),
-                    margin: EdgeInsets.symmetric(vertical: 10.0),
+                    margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 30.0),
                     child: Text(
                       "Reason",
                       textAlign: TextAlign.start,
@@ -92,10 +91,9 @@ class _CancelRequestPopUpState extends State<CancelRequestPopUp> {
                     height: 10.0,
                   ),
                   Container(
-                    width: 250.0,
                     height: 130.0,
                     alignment: Alignment.center,
-                    margin: EdgeInsets.symmetric(vertical: 5.0),
+                    margin: EdgeInsets.symmetric(vertical: 5.0, horizontal: 30.0),
                     decoration: BoxDecoration(
                       color: Palette.primaryColor.withOpacity(0.02),
                       border: Border.all(
@@ -139,10 +137,9 @@ class _CancelRequestPopUpState extends State<CancelRequestPopUp> {
                           hintText: "Note",
                         )),
                     child: Container(
-                      width: 250.0,
                       height: 70.0,
                       alignment: Alignment.topLeft,
-                      margin: EdgeInsets.symmetric(vertical: 5.0),
+                      margin: EdgeInsets.symmetric(vertical: 5.0, horizontal: 30.0),
                       decoration: BoxDecoration(
                         color: Palette.primaryColor.withOpacity(0.02),
                         border: Border.all(

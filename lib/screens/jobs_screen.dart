@@ -1,18 +1,17 @@
+import 'package:eimsky_dns_app/configs/ThemeConstants.dart';
+import 'package:eimsky_dns_app/configs/palette.dart';
 import 'package:eimsky_dns_app/utils/date_utils.dart';
 import 'package:eimsky_dns_app/utils/popup_box.dart';
-import 'package:eimsky_dns_app/widgets/color_dot_widget.dart';
 import 'package:eimsky_dns_app/widgets/date_filter_popup.dart';
+import 'package:eimsky_dns_app/widgets/header_bg_widget.dart';
 import 'package:eimsky_dns_app/widgets/job_card_item.dart';
 import 'package:eimsky_dns_app/widgets/job_request_popup.dart';
 import 'package:eimsky_dns_app/widgets/job_screen_tab.dart';
 import 'package:eimsky_dns_app/widgets/simple_page_section_widget.dart';
-import 'package:eimsky_dns_app/widgets/header_bg_widget.dart';
 import 'package:eimsky_dns_app/widgets/status_filter_popup.dart';
 import 'package:eimsky_dns_app/widgets/type_filter_popup.dart';
 import 'package:eimsky_dns_app/widgets/user_avatar_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:eimsky_dns_app/configs/ThemeConstants.dart';
-import 'package:eimsky_dns_app/configs/palette.dart';
 
 class JobsScreen extends StatefulWidget {
   const JobsScreen({Key? key, required this.focusPageFunction}) : super(key: key);
@@ -42,7 +41,7 @@ class _JobsScreenState extends State<JobsScreen> {
     super.initState();
 
     selectedOptionOfDateFilterOptions = ["All", "Today :  ${getMonthAndDate()}", "Yesterday", "Last 7 Days", "Last 30 Days", "This Month", "Last Month", "Others"];
-    selectedOptionOfTypeFilterOptions = ["All", "Portable Generator", "PIS", "Refuel"];
+    selectedOptionOfTypeFilterOptions = ["All-Services", "Portable Generator", "PIS", "Refuel"];
   }
 
   @override
@@ -246,43 +245,22 @@ class _JobsScreenState extends State<JobsScreen> {
                               child: Container(
                                 width: 25.0,
                                 height: 25.0,
-                                color: Colors.transparent,
+                                alignment: Alignment.center,
+                                decoration: BoxDecoration(
+                                  color: Palette.primaryColor.withOpacity(0.02),
+                                  border: Border.all(
+                                    color: Palette.borderColor,
+                                    width: 1.0,
+                                  ),
+                                  borderRadius: BorderRadius.all(Radius.circular(ThemeConstants.borderRadius / 1.5)),
+                                ),
                                 padding: EdgeInsets.all(5),
-                                child: Stack(
-                                  children: [
-                                    Positioned(
-                                      right: 0.0,
-                                      top: 0.0,
-                                      child: ColorDotWidget(
-                                        dotSize: 6.0,
-                                        dotColor: Palette.dotColor_yellow,
-                                      ),
-                                    ),
-                                    Positioned(
-                                      left: 0.0,
-                                      top: 0.0,
-                                      child: ColorDotWidget(
-                                        dotSize: 6.0,
-                                        dotColor: Palette.dotColor_red,
-                                      ),
-                                    ),
-                                    Positioned(
-                                      right: 0.0,
-                                      bottom: 0.0,
-                                      child: ColorDotWidget(
-                                        dotSize: 6.0,
-                                        dotColor: Palette.dotColor_blue,
-                                      ),
-                                    ),
-                                    Positioned(
-                                      left: 0.0,
-                                      bottom: 0.0,
-                                      child: ColorDotWidget(
-                                        dotSize: 6.0,
-                                        dotColor: Palette.dotColor_green,
-                                      ),
-                                    )
-                                  ],
+                                child: Container(
+                                  child: Icon(
+                                    Icons.filter_alt,
+                                    size: 15.0,
+                                    color: Palette.primaryColor,
+                                  ),
                                 ),
                               ),
                             ),

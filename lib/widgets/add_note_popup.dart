@@ -85,7 +85,7 @@ class _AddNotePopUpState extends State<AddNotePopUp> {
               height: 25.0,
             ),
             Container(
-              margin: EdgeInsets.symmetric(horizontal: 20.0),
+              margin: EdgeInsets.symmetric(horizontal: 30.0),
               child: Stack(
                 children: [
                   Container(
