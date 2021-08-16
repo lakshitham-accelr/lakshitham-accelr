@@ -96,20 +96,12 @@ class _LocationMapScreenState extends State<LocationMapScreen> {
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Container(
-              padding: EdgeInsets.all(10.0),
-              alignment: Alignment.topRight,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  shape: CircleBorder(),
-                  primary: Palette.gray_5,
-                  minimumSize: Size(30.0, 30.0),
-                ),
-                child: Icon(
-                  Icons.close,
-                  size: 20.0,
-                ),
-                onPressed: () => Navigator.pop(context),
+            GestureDetector(
+              onTap: () => Navigator.pop(context),
+              child: Container(
+                padding: EdgeInsets.all(20.0),
+                alignment: Alignment.topRight,
+                child: Icon(Icons.close, size: 20.0, color: Palette.primaryColor),
               ),
             ),
             (_position != null)

@@ -162,7 +162,7 @@ class _LocationWidgetState extends State<LocationWidget> {
                 borderRadius: BorderRadius.circular(ThemeConstants.borderRadius / 1.5),
               ),
               child: Icon(
-                Icons.location_on,
+                Icons.location_pin,
                 color: Colors.white,
                 size: 15.0,
               ),
