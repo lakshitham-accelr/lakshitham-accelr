@@ -157,6 +157,9 @@ class _SiteCheckListScreenState extends State<SiteCheckListScreen> {
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           ExpansionTileWidget(title: "Pre - Inspection List"),
+                          SizedBox(height: 3),
+                          ExpansionTileWidget(title: "Post - Inspection List"),
+                          SizedBox(height: 3),
                         ],
                       ),
                     ),

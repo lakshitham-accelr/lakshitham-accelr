@@ -243,8 +243,8 @@ class _JobsScreenState extends State<JobsScreen> {
                                     selectStatusFilterOptionFunction: selectStatusFilterOption,
                                   )),
                               child: Container(
-                                width: 25.0,
-                                height: 25.0,
+                                width: 24.0,
+                                height: 24.0,
                                 alignment: Alignment.center,
                                 decoration: BoxDecoration(
                                   color: Palette.primaryColor.withOpacity(0.02),
@@ -254,8 +254,8 @@ class _JobsScreenState extends State<JobsScreen> {
                                   ),
                                   borderRadius: BorderRadius.all(Radius.circular(ThemeConstants.borderRadius / 1.5)),
                                 ),
-                                padding: EdgeInsets.all(5),
                                 child: Container(
+                                  alignment: Alignment.center,
                                   child: Icon(
                                     Icons.filter_alt,
                                     size: 15.0,

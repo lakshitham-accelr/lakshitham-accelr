@@ -26,7 +26,7 @@ class _ExpansionTileWidgetState extends State<ExpansionTileWidget> {
             fontFamily: ThemeConstants.font,
             fontWeight: FontWeight.w600,
             color: (_isExpanded) ? Palette.primaryColor : Palette.darkBlueColor,
-            fontSize: 15.0,
+            fontSize: 14.0,
           ),
         ),
       ),
@@ -65,8 +65,8 @@ class _ExpansionTileWidgetState extends State<ExpansionTileWidget> {
           color: Palette.expansionContentBGColor,
           child: Column(
             children: [
-              Transform.scale(scale: 0.9, child: QuestionWidget(title: "Site Key Collected ?")),
-              Transform.scale(scale: 0.9, child: QuestionWidget(title: "Site Permission Request ?")),
+              Transform.scale(scale: 0.9, child: QuestionWidget(title: "Identification")),
+              Transform.scale(scale: 0.9, child: QuestionWidget(title: "Safety Approval")),
               SizedBox(height: 70),
             ],
           ),

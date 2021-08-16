@@ -1,6 +1,6 @@
 import 'package:eimsky_dns_app/configs/ThemeConstants.dart';
 import 'package:eimsky_dns_app/configs/palette.dart';
-import 'package:eimsky_dns_app/widgets/single_choice_widget.dart';
+import 'package:eimsky_dns_app/widgets/response_type_widgets/single_choice_widget.dart';
 import 'package:flutter/material.dart';
 
 class QuestionWidget extends StatelessWidget {
@@ -41,7 +41,7 @@ class QuestionWidget extends StatelessWidget {
             height: 1.0,
             color: Palette.borderColor.withOpacity(0.5),
           ),
-          SingleChoiceWidget(),
+          SingleChoiceWidget(value: true),
           Container(
             alignment: Alignment.centerLeft,
             margin: EdgeInsets.symmetric(vertical: 15.0, horizontal: 15.0),
