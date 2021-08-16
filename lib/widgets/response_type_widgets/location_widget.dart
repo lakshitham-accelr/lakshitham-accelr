@@ -83,7 +83,7 @@ class _LocationWidgetState extends State<LocationWidget> {
                       focusNode: textAreaFocusNode,
                       controller: textAreaController,
                       style: TextStyle(
-                        color: Palette.gray_1,
+                        color: Palette.darkBlueColor,
                         fontSize: 12.0,
                       ),
                       textAlignVertical: TextAlignVertical.top,
@@ -91,13 +91,13 @@ class _LocationWidgetState extends State<LocationWidget> {
                       decoration: InputDecoration(
                         hintText: widget.hintText,
                         hintStyle: TextStyle(
-                          color: Palette.gray_3,
+                          color: Palette.unselectedItem,
                           fontSize: 12.0,
                           fontFamily: ThemeConstants.font,
                         ),
                         contentPadding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
                         filled: true,
-                        fillColor: Palette.primaryColor.withOpacity(0.02),
+                        fillColor: Palette.textFieldFillColor,
                         enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(ThemeConstants.borderRadius / 1.5),
                           borderSide: BorderSide(color: Palette.borderColor),

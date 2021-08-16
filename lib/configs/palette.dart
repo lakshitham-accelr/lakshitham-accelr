@@ -52,4 +52,6 @@ class Palette {
   // Expansion Widget Color
   static const expansionTileBGColor = Color(0xFFDEE8FF);
   static const expansionContentBGColor = Color(0xFFEFF4FF);
+
+  static const textFieldFillColor = Color(0xFFFAFCFF);
 }

@@ -47,7 +47,7 @@ class _BarcodeInputWidgetState extends State<BarcodeInputWidget> {
         focusNode: barCodeInputFocusNode,
         controller: barCodeInputController,
         style: TextStyle(
-          color: Palette.gray_1,
+          color: Palette.darkBlueColor,
           fontSize: 12.0,
         ),
         textAlignVertical: TextAlignVertical.center,
@@ -55,7 +55,7 @@ class _BarcodeInputWidgetState extends State<BarcodeInputWidget> {
         decoration: InputDecoration(
           hintText: "Barcode Number",
           hintStyle: TextStyle(
-            color: Palette.gray_3,
+            color: Palette.unselectedItem,
             fontSize: 12.0,
             fontFamily: ThemeConstants.font,
           ),
@@ -74,7 +74,7 @@ class _BarcodeInputWidgetState extends State<BarcodeInputWidget> {
             ),
           ),
           filled: true,
-          fillColor: Colors.white,
+          fillColor: Palette.textFieldFillColor,
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(ThemeConstants.borderRadius / 1.5),
             borderSide: BorderSide(color: Palette.borderColor),
