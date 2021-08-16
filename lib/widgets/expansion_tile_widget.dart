@@ -1,6 +1,7 @@
 import 'package:eimsky_dns_app/configs/ThemeConstants.dart';
 import 'package:eimsky_dns_app/configs/palette.dart';
 import 'package:eimsky_dns_app/widgets/question_widget.dart';
+import 'package:eimsky_dns_app/widgets/response_type_widgets/single_choice_widget.dart';
 import 'package:flutter/material.dart';
 
 class ExpansionTileWidget extends StatefulWidget {
@@ -65,8 +66,8 @@ class _ExpansionTileWidgetState extends State<ExpansionTileWidget> {
           color: Palette.expansionContentBGColor,
           child: Column(
             children: [
-              Transform.scale(scale: 0.9, child: QuestionWidget(title: "Identification")),
-              Transform.scale(scale: 0.9, child: QuestionWidget(title: "Safety Approval")),
+              Transform.scale(scale: 0.9, child: QuestionWidget(title: "Identification", responseTypeWidget: SingleChoiceWidget(value: true))),
+              Transform.scale(scale: 0.9, child: QuestionWidget(title: "Safety Approval", responseTypeWidget: SingleChoiceWidget(value: true))),
               SizedBox(height: 70),
             ],
           ),

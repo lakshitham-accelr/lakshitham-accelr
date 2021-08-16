@@ -100,7 +100,6 @@ class _AddNotePopUpState extends State<AddNotePopUp> {
                       style: TextStyle(
                         color: Palette.gray_1,
                         fontSize: 12.0,
-                        letterSpacing: 1.2,
                       ),
                       textAlignVertical: TextAlignVertical.top,
                       cursorColor: Palette.primaryColor,
@@ -109,7 +108,6 @@ class _AddNotePopUpState extends State<AddNotePopUp> {
                         hintStyle: TextStyle(
                           color: Palette.gray_3,
                           fontSize: 12.0,
-                          letterSpacing: 1.2,
                           fontFamily: ThemeConstants.font,
                         ),
                         contentPadding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
