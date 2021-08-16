@@ -3,4 +3,5 @@ class PageRoutes {
   static const String teamAllocateScreen = "/teamAllocateScreen";
   static const String siteAccessRequestScreen = "/siteAccessRequestScreen";
   static const String siteCheckListScreen = "/siteCheckListScreen";
+  static const String locationMapScreen = "/locationMapScreen";
 }

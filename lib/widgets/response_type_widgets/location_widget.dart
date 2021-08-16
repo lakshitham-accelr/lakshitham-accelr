@@ -1,5 +1,7 @@
 import 'package:eimsky_dns_app/configs/ThemeConstants.dart';
 import 'package:eimsky_dns_app/configs/palette.dart';
+import 'package:eimsky_dns_app/screens/location_map_screen.dart';
+import 'package:eimsky_dns_app/utils/page_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -40,7 +42,6 @@ class _LocationWidgetState extends State<LocationWidget> {
   @override
   void initState() {
     super.initState();
-
     textAreaFocusNode.addListener(_onFocusChange);
   }
 
@@ -57,6 +58,10 @@ class _LocationWidgetState extends State<LocationWidget> {
 
   @override
   Widget build(BuildContext context) {
+    if (address != null && latitude != null && longitude != null) {
+      textAreaController.text = address! + ("  (${latitude!} , ${longitude!})");
+    }
+
     return Container(
       margin: EdgeInsets.symmetric(vertical: 30.0, horizontal: 15.0),
       alignment: Alignment.center,
@@ -144,6 +149,10 @@ class _LocationWidgetState extends State<LocationWidget> {
           InkWell(
             onTap: () {
               FocusScope.of(context).unfocus();
+              Navigator.of(context).pushNamed(
+                PageRoutes.locationMapScreen,
+                arguments: new LocationMapArguments(setLocationDetailsFunc: updateLocationStatus),
+              );
             },
             child: Container(
               margin: EdgeInsets.only(left: 7.0),
@@ -164,7 +173,7 @@ class _LocationWidgetState extends State<LocationWidget> {
     );
   }
 
-  void updateState(String newAddress, double newLatitude, double newLongitude) {
+  void updateLocationStatus(String newAddress, double newLatitude, double newLongitude) {
     setState(() {
       address = newAddress;
       latitude = newLatitude;
