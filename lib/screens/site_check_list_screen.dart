@@ -93,82 +93,96 @@ class _SiteCheckListScreenState extends State<SiteCheckListScreen> {
             child: Container(
               width: MediaQuery.of(context).size.width,
               color: Colors.white,
-              child: Column(
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        margin: EdgeInsets.symmetric(vertical: 25.0),
-                        child: CircularPercentIndicator(
-                          radius: 125.0,
-                          animation: true,
-                          animationDuration: 1200,
-                          reverse: true,
-                          lineWidth: 10.0,
-                          percent: 0.7,
-                          center: Center(
-                            child: Container(
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    "Remaining",
-                                    style: TextStyle(
-                                      fontFamily: ThemeConstants.font,
-                                      fontWeight: FontWeight.w600,
-                                      color: Palette.darkBlueColor.withOpacity(0.4),
-                                      fontSize: 10.0,
+              child: SingleChildScrollView(
+                scrollDirection: Axis.vertical,
+                physics: (isArrived) ? BouncingScrollPhysics() : NeverScrollableScrollPhysics(),
+                child: Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                          margin: EdgeInsets.symmetric(vertical: 25.0),
+                          child: CircularPercentIndicator(
+                            radius: 125.0,
+                            animation: true,
+                            animationDuration: 1200,
+                            reverse: true,
+                            lineWidth: 10.0,
+                            percent: 0.7,
+                            center: Center(
+                              child: Container(
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      "Remaining",
+                                      style: TextStyle(
+                                        fontFamily: ThemeConstants.font,
+                                        fontWeight: FontWeight.w600,
+                                        color: Palette.darkBlueColor.withOpacity(0.4),
+                                        fontSize: 10.0,
+                                      ),
                                     ),
-                                  ),
-                                  SizedBox(height: 5),
-                                  Text(
-                                    "1h 40m",
-                                    style: TextStyle(
-                                      fontFamily: ThemeConstants.font,
-                                      fontWeight: FontWeight.w600,
-                                      color: Palette.darkBlueColor.withOpacity(0.4),
-                                      fontSize: 20.0,
+                                    SizedBox(height: 5),
+                                    Text(
+                                      "1h 40m",
+                                      style: TextStyle(
+                                        fontFamily: ThemeConstants.font,
+                                        fontWeight: FontWeight.w600,
+                                        color: Palette.darkBlueColor.withOpacity(0.4),
+                                        fontSize: 20.0,
+                                      ),
                                     ),
-                                  ),
-                                  SizedBox(height: 15),
-                                ],
+                                    SizedBox(height: 15),
+                                  ],
+                                ),
                               ),
                             ),
+                            circularStrokeCap: CircularStrokeCap.round,
+                            backgroundColor: Palette.teamCardBGColor,
+                            progressColor: Palette.primaryColor.withOpacity(0.8),
                           ),
-                          circularStrokeCap: CircularStrokeCap.round,
-                          backgroundColor: Palette.teamCardBGColor,
-                          progressColor: Palette.primaryColor.withOpacity(0.8),
                         ),
-                      ),
-                      SizedBox(
-                        width: 30.0,
-                      ),
-                      SelectedTeamCardItem(
-                        teamCode: "T - 01",
-                        teamName: "Team One",
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: 15.0),
-                  Expanded(
-                    child: SingleChildScrollView(
-                      scrollDirection: Axis.vertical,
-                      physics: BouncingScrollPhysics(),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          ExpansionTileWidget(title: "Pre - Inspection List"),
-                          SizedBox(height: 3),
-                          ExpansionTileWidget(title: "Post - Inspection List"),
-                          SizedBox(height: 3),
-                          QuestionWidget(title: "Barcode", responseTypeWidget: BarcodeInputWidget()),
-                          SizedBox(height: 70),
-                        ],
-                      ),
+                        SizedBox(
+                          width: 30.0,
+                        ),
+                        SelectedTeamCardItem(
+                          teamCode: "T - 01",
+                          teamName: "Team One",
+                        ),
+                      ],
                     ),
-                  ),
-                ],
+                    SizedBox(height: 15.0),
+                    Stack(
+                      children: [
+                        Opacity(
+                          opacity: (isArrived) ? 1 : 0.5,
+                          child: Column(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              ExpansionTileWidget(title: "Pre - Inspection List"),
+                              SizedBox(height: 3),
+                              ExpansionTileWidget(title: "Post - Inspection List"),
+                              SizedBox(height: 3),
+                              QuestionWidget(title: "Barcode", responseTypeWidget: BarcodeInputWidget()),
+                              SizedBox(height: 70),
+                            ],
+                          ),
+                        ),
+                        (isArrived)
+                            ? SizedBox.shrink()
+                            : Container(
+                                height: 1000.0,
+                                foregroundDecoration: BoxDecoration(
+                                  color: Palette.gray_1,
+                                  backgroundBlendMode: BlendMode.saturation,
+                                ),
+                              ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ),
           )
