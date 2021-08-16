@@ -4,6 +4,7 @@ import 'package:eimsky_dns_app/widgets/expansion_tile_widget.dart';
 import 'package:eimsky_dns_app/widgets/header_bg_widget.dart';
 import 'package:eimsky_dns_app/widgets/question_widget.dart';
 import 'package:eimsky_dns_app/widgets/response_type_widgets/barcode_input_widget.dart';
+import 'package:eimsky_dns_app/widgets/response_type_widgets/location_widget.dart';
 import 'package:eimsky_dns_app/widgets/selected_team_card_item.dart';
 import 'package:eimsky_dns_app/widgets/user_avatar_widget.dart';
 import 'package:flutter/material.dart';
@@ -168,8 +169,9 @@ class _SiteCheckListScreenState extends State<SiteCheckListScreen> {
                               ExpansionTileWidget(title: "Pre - Inspection List"),
                               SizedBox(height: 3),
                               ExpansionTileWidget(title: "Post - Inspection List"),
-                              SizedBox(height: 3),
+                              SizedBox(height: 20),
                               QuestionWidget(title: "Barcode", responseTypeWidget: BarcodeInputWidget()),
+                              QuestionWidget(title: "Barcode", responseTypeWidget: LocationWidget(hintText: "Add Your Location")),
                               SizedBox(height: 120),
                             ],
                           ),
