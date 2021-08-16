@@ -42,7 +42,10 @@ class _SiteCheckListScreenState extends State<SiteCheckListScreen> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         GestureDetector(
-                          onTap: () => Navigator.pop(context),
+                          onTap: () {
+                            FocusScope.of(context).unfocus();
+                            Navigator.pop(context);
+                          },
                           child: Container(
                             width: 35.0,
                             height: 35.0,
@@ -161,12 +164,13 @@ class _SiteCheckListScreenState extends State<SiteCheckListScreen> {
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             children: [
+                              // This should be generated with the API response checklist
                               ExpansionTileWidget(title: "Pre - Inspection List"),
                               SizedBox(height: 3),
                               ExpansionTileWidget(title: "Post - Inspection List"),
                               SizedBox(height: 3),
                               QuestionWidget(title: "Barcode", responseTypeWidget: BarcodeInputWidget()),
-                              SizedBox(height: 70),
+                              SizedBox(height: 120),
                             ],
                           ),
                         ),

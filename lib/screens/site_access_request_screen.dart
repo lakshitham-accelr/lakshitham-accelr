@@ -44,7 +44,10 @@ class _SiteAccessRequestScreenState extends State<SiteAccessRequestScreen> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         GestureDetector(
-                          onTap: () => Navigator.pop(context),
+                          onTap: () {
+                            FocusScope.of(context).unfocus();
+                            Navigator.pop(context);
+                          },
                           child: Container(
                             width: 35.0,
                             height: 35.0,
@@ -157,7 +160,6 @@ class _SiteAccessRequestScreenState extends State<SiteAccessRequestScreen> {
                     ),
                     SizedBox(height: 15.0),
                     Container(
-                      height: 500,
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         children: [
@@ -344,6 +346,7 @@ class _SiteAccessRequestScreenState extends State<SiteAccessRequestScreen> {
                               ],
                             ),
                           ),
+                          SizedBox(height: 120.0),
                         ],
                       ),
                     ),

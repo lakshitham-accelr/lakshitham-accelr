@@ -133,7 +133,10 @@ class _TeamAllocateScreenState extends State<TeamAllocateScreen> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         GestureDetector(
-                          onTap: () => Navigator.pop(context),
+                          onTap: () {
+                            FocusScope.of(context).unfocus();
+                            Navigator.pop(context);
+                          },
                           child: Container(
                             width: 35.0,
                             height: 35.0,
