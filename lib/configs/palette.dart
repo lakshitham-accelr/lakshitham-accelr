@@ -12,12 +12,6 @@ class Palette {
   static const userOffline = Color(0xFFF5325C);
   static const userOnline = Color(0xFF03d87f);
 
-  // Color Dots
-  static const dotColor_yellow = Color(0xFFFFB822);
-  static const dotColor_red = Color(0xFFF5325C);
-  static const dotColor_blue = Color(0xFF1761FD);
-  static const dotColor_green = Color(0xFF03D87F);
-
   // Gray Colors
   static const gray_1 = Color(0xFF333333);
   static const gray_2 = Color(0xFF4F4F4F);

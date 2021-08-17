@@ -3,9 +3,8 @@ import 'package:flutter/services.dart';
 
 class AppConfig {
   late bool devModeEnabled;
-  late String surveyServiceApiUrl;
-  late String templateServiceApiUrl;
-  late String blobStorageServiceApiUrl;
+  late String userApiUrl;
+  late String restApiUrl;
   
   AppConfig() {
     forEnvironment();
@@ -21,8 +20,7 @@ class AppConfig {
     final json = jsonDecode(contents);
 
     devModeEnabled = json['DEV_MODE_ENABLED'];
-    surveyServiceApiUrl = json['SURVEY_SERVICE_API_URL'];
-    templateServiceApiUrl = json['TEMPLATE_SERVICE_API_URL'];
-    blobStorageServiceApiUrl = json['BLOB_STORAGE_SERVICE_API_URL'];
+    userApiUrl = json['USER_API_URL'];
+    restApiUrl = json['REST_API_URL'];
   }
 }
